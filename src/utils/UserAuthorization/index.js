@@ -4,8 +4,8 @@ export const getUserCachedData = () => {
 
 export const checkUserLogged = () => {
   const userData = getUserCachedData()
-  const isLogged = !!userData?.token
-  return isLogged
+  const userLogged = !!userData?.token
+  return userLogged
 }
 
 export const cleanUserToken = () => {

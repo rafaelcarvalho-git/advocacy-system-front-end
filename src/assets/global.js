@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const colorBlack = '#252525'
 export const primaryColor = '#1190CB'
-export const secondryColor = '#7DCCFF'
+export const secondaryColor = '#7DCCFF'
 
 export const GlobalStyle = createGlobalStyle`
   * {
