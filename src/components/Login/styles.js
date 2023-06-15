@@ -27,7 +27,7 @@ export const LoginLogo = styled.div`
 
   img {
     width: 100%;
-    max-width: 240px;
+    max-width: 280px;
   }
 `
 
@@ -58,21 +58,6 @@ export const LoginInput = styled.div`
 
   & input {
     margin-top: 0.5rem;
-  }
-`
-
-export const LoginOptions = styled.div`
-  margin-bottom: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-
-  @media (max-width: 384px) {
-    & button {
-      margin-top: 12px;
-      margin-left: auto;
-    }
   }
 `
 

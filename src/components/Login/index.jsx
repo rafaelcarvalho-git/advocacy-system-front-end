@@ -1,7 +1,7 @@
 import * as S from './styles'
 import { useState } from 'react'
 import logo from 'assets/images/logo.png'
-import { Input, Checkbox, message } from 'antd'
+import { Input, message } from 'antd'
 import login from 'services/collaborator/login'
 import ReactLoading from 'react-loading'
 import { useNavigate } from 'react-router-dom'
@@ -41,7 +41,7 @@ function LoginForm() {
             )
           }
           setIncorrectLogin(true)
-          setIncorrectPhrase('Usuário ou senha incorretos.')
+          setIncorrectPhrase('E-mail ou senha incorretos.')
         })
         .finally(() => {
           setLoading(false)
@@ -56,16 +56,16 @@ function LoginForm() {
     <S.LoginForm>
       <S.LoginLogo>
         <a
-          href='https://www.advocacysystemassociados.adv.br/'
+          href='https://github.com/rafaelcarvalho-git/advocacy-system-front-end'
           target='_blank'
-          rel='nologoutModaler noreferrer'
+          rel='noopener noreferrer'
         >
-          <img src={logo} alt='advocacysystemadv-logo' />
+          <img src={logo} alt='advocacy-system' />
         </a>
       </S.LoginLogo>
       <S.LoginInput>
         <label htmlFor='user'>
-          <h4>Usuário</h4>
+          <h4>E-mail</h4>
         </label>
         <Input
           id='user'
@@ -75,7 +75,7 @@ function LoginForm() {
             setUserLogin(prev => ({ ...prev, email: e.target.value }))
           }
           onClick={() => setIncorrectLogin(false)}
-          placeholder='advogadosassociados@gmail.com'
+          placeholder='advogado@gmail.com'
           required
         />
       </S.LoginInput>
@@ -95,17 +95,6 @@ function LoginForm() {
           required
         />
       </S.LoginInput>
-
-      <S.LoginOptions>
-        <Checkbox
-          checked={userLogin.conected}
-          onChange={e =>
-            setUserLogin(prev => ({ ...prev, conected: e.target.checked }))
-          }
-        >
-          Mantenha-me conectado
-        </Checkbox>
-      </S.LoginOptions>
 
       {incorrectLogin && <S.LoginError>{incorrectPhrase}</S.LoginError>}
 

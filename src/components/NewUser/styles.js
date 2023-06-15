@@ -33,7 +33,7 @@ export const AdvocacySystemLogo = styled.div`
 
   img {
     width: 100%;
-    max-width: 240px;
+    max-width: 280px;
   }
 `
 
