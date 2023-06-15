@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Dashboard from 'pages/Dashboard'
 import ActiveProcesses from 'pages/ActiveProcesses/'
 import ConcludedProcesses from 'pages/ConcludedProcesses'
-import UploadData from 'pages/UploadData'
 import Login from 'pages/Login'
 import Registrations from 'pages/Registrations'
 import NotFound from 'pages/NotFound'
@@ -45,16 +44,6 @@ const Router = () => {
           <Route
             path='processos-concluidos'
             element={<PrivatePage Page={() => <ConcludedProcesses />} />}
-          />
-          <Route
-            path='upload'
-            element={
-              isAdmin ? (
-                <PrivatePage Page={() => <UploadData />} />
-              ) : (
-                <Navigate to='/dashboard' replace />
-              )
-            }
           />
           <Route
             path='cadastros'
