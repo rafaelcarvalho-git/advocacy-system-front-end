@@ -1,6 +1,6 @@
 import * as S from './styles'
 import { Outlet } from 'react-router-dom'
-import LogoutModal from 'components/Container/LogoutModal'
+import Logout from 'components/Container/Logout'
 import { checkUserLogged } from 'utils/UserAuthorization'
 import { useState } from 'react'
 import Navbar from './Navbar'
@@ -14,7 +14,7 @@ function Container() {
         <>
           <Navbar setLogout={setShowLogout} />
           <S.Container>
-            <LogoutModal open={showLogout} setIsOpen={setShowLogout} />
+            <Logout open={showLogout} setIsOpen={setShowLogout} />
             <Outlet />
             <S.Footer>
               &copy; {new Date().getFullYear()} - Advocacy System

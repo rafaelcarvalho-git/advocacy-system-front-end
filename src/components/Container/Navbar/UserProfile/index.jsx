@@ -1,27 +1,22 @@
-import Menu from '@mui/material/Menu';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { useState } from 'react';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import { Menu, Avatar, Tooltip, MenuItem, IconButton, Typography } from '@mui/material'
+import ExitToAppIcon from '@mui/icons-material/ExitToApp'
+import { useState } from 'react'
 import { getUserCachedData } from 'utils/UserAuthorization'
 
-const options = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function UserProfile({ setLogout }) {
-    const [anchorElUser, setAnchorElUser] = useState(null);
+const UserProfile = ({ setLogout }) => {
+    const [anchorElUser, setAnchorElUser] = useState(null)
     const userData = getUserCachedData()
     const userName = `${userData?.first_name} ${userData?.last_name}`
 
     const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
+        setAnchorElUser(event.currentTarget)
+    }
 
     const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-        setLogout(true);
-    };
+        setLogout(true)
+        setAnchorElUser(null)
+    }
 
     return (
         <div sx={{ flexGrow: 0 }}>
@@ -49,11 +44,12 @@ function UserProfile({ setLogout }) {
                 open={anchorElUser}
                 onClose={handleCloseUserMenu}
             >
-                {options.map((option) => (
-                    <MenuItem key={option} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{option}</Typography>
-                    </MenuItem>
-                ))}
+
+                <MenuItem onClick={() => handleCloseUserMenu()}>
+                    <Typography textAlign="center">Logout</Typography>
+                    <ExitToAppIcon style={{ marginLeft: '5px' }} />
+                </MenuItem>
+
             </Menu>
         </div>
     )

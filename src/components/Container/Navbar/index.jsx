@@ -1,26 +1,25 @@
 import * as S from './styles'
-import { Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import UserProfile from './UserProfile';
-import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ArticleIcon from '@mui/icons-material/Article';
-import FileUploadIcon from '@mui/icons-material/FileUpload';
-import PersonIcon from '@mui/icons-material/Person';
+import { Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import DashboardIcon from '@mui/icons-material/Dashboard'
+import ArticleIcon from '@mui/icons-material/Article'
+import PersonIcon from '@mui/icons-material/Person'
+import UserProfile from './UserProfile'
+import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 
-const pages = [{ item: 'Dashboard', icon: <DashboardIcon />, link: '/dashboard' }, { item: 'Processos Ativos', icon: <ArticleIcon />, link: '/processos-ativos' }, { item: 'Processos Finalizados', icon: <ArticleIcon />, link: '/processos-concluidos' }, { item: 'Upload', icon: <FileUploadIcon />, link: '/upload' }, { item: 'Cadastros', icon: <PersonIcon />, link: '/cadastros' }]
+const pages = [{ item: 'Dashboard', icon: <DashboardIcon />, link: '/dashboard' }, { item: 'Processos Ativos', icon: <ArticleIcon />, link: '/processos-ativos' }, { item: 'Processos Finalizados', icon: <ArticleIcon />, link: '/processos-concluidos' }, { item: 'Cadastros', icon: <PersonIcon />, link: '/cadastros' }]
 
 const Navbar = ({ setLogout }) => {
-    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [openNavMenu, setOpenNavMenu] = useState(null)
 
     const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
+        setOpenNavMenu(event.currentTarget)
+    }
 
     const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+        setOpenNavMenu(null)
+    }
 
     return (
         <S.Nav position="static">
@@ -40,7 +39,7 @@ const Navbar = ({ setLogout }) => {
 
                         <Menu
                             id="mobile-menu"
-                            anchorEl={anchorElNav}
+                            anchorEl={openNavMenu}
                             anchorOrigin={{
                                 vertical: 'bottom',
                                 horizontal: 'left',
@@ -50,7 +49,7 @@ const Navbar = ({ setLogout }) => {
                                 vertical: 'top',
                                 horizontal: 'left',
                             }}
-                            open={anchorElNav}
+                            open={openNavMenu}
                             onClose={() => handleCloseNavMenu()}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
@@ -83,7 +82,7 @@ const Navbar = ({ setLogout }) => {
                 </Toolbar>
             </Container>
         </S.Nav >
-    );
+    )
 }
 
-export default Navbar;
+export default Navbar
