@@ -23,17 +23,6 @@ export const UploadText = styled.p`
   margin-bottom: 24px;
 `
 
-export const UploadButton = styled(Button)`
-  width: 100%;
-  max-width: 220px;
-  height: 42px;
-  margin: 64px auto 64px auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-
 export const UploadError = styled.p`
   text-align: center;
   color: #dc3545;

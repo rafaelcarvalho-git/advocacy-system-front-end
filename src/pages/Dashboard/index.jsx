@@ -1,7 +1,7 @@
 import * as S from './styles'
 import { useState, useEffect, useCallback } from 'react'
 import Header from 'components/Container/Header'
-import { Statistic, message } from 'antd'
+import { Button, Statistic, message } from 'antd'
 import CountUp from 'react-countup'
 import {
   BsCalendarWeekFill,
@@ -14,10 +14,13 @@ import { FaUserAlt } from 'react-icons/fa'
 import Loader from 'components/Loader'
 import dashboard from 'services/dashboard/dashboard'
 import listCollaborators from 'services/collaborator/listCollaborators'
+import UploadData from 'components/UploadData'
 
 function Dashboard() {
   const [loading, setLoading] = useState(true)
   const [dashboardData, setDashboardData] = useState({})
+
+  const [showUpload, setShowUpload] = useState(false);
 
   const fetchDashboard = useCallback(() => {
     setLoading(true)
@@ -56,6 +59,21 @@ function Dashboard() {
       ) : (
         <>
           <S.CardGroup>
+
+            <S.DataCard>
+              <S.CardInfo>
+
+                <h4>Atualizar Processos</h4>
+
+                <p>Processos Ativos</p>
+              </S.CardInfo>
+              <S.CardIcon>
+                <BsFileEarmarkTextFill />
+              </S.CardIcon>
+              <UploadData open={showUpload} setIsOpen={setShowUpload} />
+              <Button type="primary" onClick={() => setShowUpload(true)}>asdasd</Button>
+            </S.DataCard>
+
             <S.DataCard>
               <S.CardInfo>
                 <Statistic
