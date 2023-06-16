@@ -14,7 +14,7 @@ const NotFound = () => {
         pageTitle='Página não encontrada'
         pageDesc='A página que você procura não foi encontrada ou não existe, confira sua URL ou clique no botão para voltar.'
       >
-        <WarningAmberIcon />
+        <WarningAmberIcon style={{ fontSize: '48px' }} />
       </Header>
 
       <S.ReturnButton

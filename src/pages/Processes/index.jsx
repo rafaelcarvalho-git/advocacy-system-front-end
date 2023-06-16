@@ -15,7 +15,7 @@ const Processes = () => {
                 pageTitle='Processos'
                 pageDesc='Lista com todos os processos ativos ou pendentes do sistema.'
             >
-                <ArticleIcon />
+                <ArticleIcon style={{ fontSize: '48px' }} />
             </Header>
 
             <ProcessessMenu menuOption={menuOption} setMenuOption={setMenuOption} />

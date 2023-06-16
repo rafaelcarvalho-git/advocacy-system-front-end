@@ -33,7 +33,7 @@ const Registrations = () => {
         pageTitle='Cadastros'
         pageDesc='Lista com todos os usuários, escritórios e advogados cadastrados.'
       >
-        <PeopleAltIcon />
+        <PeopleAltIcon style={{ fontSize: '48px' }} />
       </Header>
 
       {loading ? (

@@ -46,7 +46,7 @@ const Dashboard = () => {
         pageTitle='Dashboard'
         pageDesc='Informações gerais sobre os processos e o sistema.'
       >
-        <DashboardIcon />
+        <DashboardIcon style={{ fontSize: '48px' }} />
       </Header>
 
       {loading ? (
