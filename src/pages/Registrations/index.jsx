@@ -37,8 +37,6 @@ function Registrations() {
         <BsFillPersonLinesFill />
       </Header>
 
-      <RegistrationsMenu />
-
       {loading ? (
         <Loader />
       ) : (
