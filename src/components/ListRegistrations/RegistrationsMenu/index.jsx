@@ -14,15 +14,6 @@ const menuItems = [
         ),
         key: 'users',
         icon: <BsFillPersonFill />,
-    },/*
-    {
-        label: (
-            <NavLink>
-                Escritorios
-            </NavLink>
-        ),
-        key: 'offices',
-        icon: <HiOutlineOfficeBuilding />,
     },
     {
         label: (
@@ -32,18 +23,27 @@ const menuItems = [
         ),
         key: 'lawyers',
         icon: <VscLaw />,
-    },*/
-];
+    },
+    {
+        label: (
+            <NavLink>
+                Escritorios
+            </NavLink>
+        ),
+        key: 'offices',
+        icon: <HiOutlineOfficeBuilding />,
+    }
+]
 
-function RegistrationsMenu() {
-    const [menuOption, setMenuOption] = useState('users');
+const RegistrationsMenu = () => {
+    const [menuOption, setMenuOption] = useState('users')
     const menuFunction = (e) => {
-        setMenuOption(e.key);
-    };
+        setMenuOption(e.key)
+    }
 
     return (
         <Menu onClick={menuFunction} selectedKeys={[menuOption]} mode="horizontal" items={menuItems} style={{ justifyContent: 'center' }} />
     )
 }
 
-export default RegistrationsMenu;
+export default RegistrationsMenu

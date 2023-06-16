@@ -1,16 +1,12 @@
 import * as S from './styles'
-import { message } from 'antd'
 import UsersActions from './UsersActions'
 import { getUserCachedData } from 'utils/UserAuthorization'
+import { copy } from 'utils/copy'
 
-function ListRegistrations({ collaborators, successCallback }) {
+
+const Registrations = ({ collaborators, successCallback }) => {
   const userData = getUserCachedData()
   const isAdmin = userData.admin
-
-  function copy(text) {
-    navigator.clipboard.writeText(text)
-    message.success(`${text} copiado!`)
-  }
 
   return (
     <S.TableContent>
@@ -70,4 +66,4 @@ function ListRegistrations({ collaborators, successCallback }) {
     </S.TableContent>
   )
 }
-export default ListRegistrations
+export default Registrations
