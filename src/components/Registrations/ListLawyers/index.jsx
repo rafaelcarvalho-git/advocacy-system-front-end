@@ -2,6 +2,11 @@ import * as S from './styles'
 import UsersActions from '../UsersActions'
 import { getUserCachedData } from 'utils/UserAuthorization'
 import { copy } from 'utils/copy'
+import PhoneIcon from '@mui/icons-material/Phone'
+import EmailIcon from '@mui/icons-material/Email'
+import BuildIcon from '@mui/icons-material/Build'
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ApartmentIcon from '@mui/icons-material/Apartment';
 
 
 const ListLawyers = ({ collaborators, successCallback }) => {
@@ -13,17 +18,16 @@ const ListLawyers = ({ collaborators, successCallback }) => {
             <S.Table>
                 <thead>
                     <tr>
-                        <th>Colaborador</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Cpf</th>
-                        <th>Admin</th>
-                        {isAdmin && <th>Ações</th>}
+                        <th>Advogado</th>
+                        <th><div><ApartmentIcon /><p>Escritório</p></div></th>
+                        <th><div><PhoneIcon /><p>Telefone</p></div></th>
+                        <th><div><EmailIcon /><p>E-mail</p></div></th>
+                        {isAdmin && <th><div><BuildIcon /><p>Ações</p></div></th>}
                     </tr>
                 </thead>
                 <tbody>
                     {collaborators?.map(
-                        ({ id, first_name, last_name, email, telephone, cpf, admin }) => {
+                        ({ id, first_name, last_name, email, telephone, cpf }) => {
                             return (
                                 <tr key={id}>
                                     <td
@@ -40,7 +44,6 @@ const ListLawyers = ({ collaborators, successCallback }) => {
                                         </a>
                                     </td>
                                     <td onClick={() => copy(cpf)}>{cpf}</td>
-                                    <td>{admin ? 'Sim' : 'Não'}</td>
                                     {isAdmin && (
                                         <td>
                                             <UsersActions
@@ -51,7 +54,6 @@ const ListLawyers = ({ collaborators, successCallback }) => {
                                                     email,
                                                     telephone,
                                                     cpf,
-                                                    admin,
                                                 }}
                                                 successCallback={successCallback}
                                             />

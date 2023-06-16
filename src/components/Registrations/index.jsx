@@ -4,6 +4,7 @@ import ListUsers from './ListUsers'
 import ListLawyers from './ListLawyers'
 import { useState } from 'react'
 import RegistrationsMenu from './RegistrationsMenu'
+import RegistrationsOptions from './RegistrationsOptions'
 
 const ListRegistrations = ({ collaborators, successCallback }) => {
   const [menuOption, setMenuOption] = useState('users')
@@ -11,6 +12,8 @@ const ListRegistrations = ({ collaborators, successCallback }) => {
   return (
     <>
       <RegistrationsMenu menuOption={menuOption} setMenuOption={setMenuOption} />
+
+      <RegistrationsOptions placeholder={'a'} />
 
       <S.TableContent>
         {menuOption === 'users' && <ListUsers collaborators={collaborators} successCallback={successCallback} />}
