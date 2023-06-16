@@ -8,7 +8,7 @@ import UserProfile from './UserProfile'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
-const pages = [{ item: 'Dashboard', icon: <DashboardIcon />, link: '/dashboard' }, { item: 'Processos Ativos', icon: <ArticleIcon />, link: '/processos-ativos' }, { item: 'Processos Finalizados', icon: <ArticleIcon />, link: '/processos-concluidos' }, { item: 'Cadastros', icon: <PersonIcon />, link: '/cadastros' }]
+const pages = [{ item: 'Dashboard', icon: <DashboardIcon />, link: '/dashboard' }, { item: 'Processos', icon: <ArticleIcon />, link: '/processos' }, { item: 'Cadastros', icon: <PersonIcon />, link: '/cadastros' }]
 
 const Navbar = ({ setLogout }) => {
     const [openNavMenu, setOpenNavMenu] = useState(null)
