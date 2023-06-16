@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import Dashboard from 'pages/Dashboard'
-import ActiveProcesses from 'pages/ActiveProcesses/'
-import ConcludedProcesses from 'pages/ConcludedProcesses'
 import Login from 'pages/Login'
+import NewUser from 'pages/NewUser'
+import Dashboard from 'pages/Dashboard'
+import Processes from 'pages/Processes'
 import Registrations from 'pages/Registrations'
 import NotFound from 'pages/NotFound'
-import NewUser from 'pages/NewUser'
 import Container from 'components/Container'
 import PrivatePage from 'components/Router/PrivatePage'
 import useLogin from 'contexts/LoginContext'
@@ -37,12 +36,8 @@ const Router = () => {
             element={<PrivatePage Page={() => <Dashboard />} />}
           />
           <Route
-            path='processos-ativos'
-            element={<PrivatePage Page={() => <ActiveProcesses />} />}
-          />
-          <Route
-            path='processos-concluidos'
-            element={<PrivatePage Page={() => <ConcludedProcesses />} />}
+            path='processos'
+            element={<PrivatePage Page={() => <Processes />} />}
           />
           <Route
             path='cadastros'
