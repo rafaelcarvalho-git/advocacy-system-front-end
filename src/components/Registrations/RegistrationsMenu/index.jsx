@@ -35,8 +35,8 @@ const menuItems = [
     }
 ]
 
-const RegistrationsMenu = () => {
-    const [menuOption, setMenuOption] = useState('users')
+const RegistrationsMenu = ({ menuOption, setMenuOption }) => {
+
     const menuFunction = (e) => {
         setMenuOption(e.key)
     }

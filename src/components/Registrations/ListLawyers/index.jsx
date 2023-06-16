@@ -1,5 +1,5 @@
 import * as S from './styles'
-import UsersActions from './UsersActions'
+import UsersActions from '../UsersActions'
 import { getUserCachedData } from 'utils/UserAuthorization'
 import { copy } from 'utils/copy'
 
