@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-function Pagination({ setPaginate, totalProcesses }) {
+const Pagination = ({ setPaginate, totalProcesses }) => {
   return (
     <S.PaginationProcess
       total={totalProcesses}

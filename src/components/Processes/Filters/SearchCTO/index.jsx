@@ -1,7 +1,7 @@
 import * as S from './styles'
-import { BsSearch } from 'react-icons/bs'
+import SearchIcon from '@mui/icons-material/Search'
 
-function Search({ setSearchCTO }) {
+const Search = ({ setSearchCTO }) => {
   return (
     <S.SearchBar>
       <label htmlFor='searchCTO'>
@@ -11,7 +11,7 @@ function Search({ setSearchCTO }) {
         id='searchCTO'
         size='large'
         placeholder='CTO'
-        suffix={<BsSearch />}
+        suffix={<SearchIcon />}
         allowClear
         onChange={e => setSearchCTO(e.target.value.toUpperCase())}
       />

@@ -1,8 +1,8 @@
 import { Button } from 'antd'
 import * as S from './styles'
-import { BsSearch } from 'react-icons/bs'
+import SearchIcon from '@mui/icons-material/Search'
 
-function RegistrationsOptions({ placeholder, setSearchName }) {
+const RegistrationsOptions = ({ placeholder, setSearchName }) => {
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <S.SearchBar>
@@ -10,7 +10,7 @@ function RegistrationsOptions({ placeholder, setSearchName }) {
                     id='searchRegistration'
                     size='large'
                     placeholder={placeholder}
-                    suffix={<BsSearch />}
+                    suffix={<SearchIcon />}
                     allowClear
                     onChange={e => console.log(e.target.value.toLowerCase())}
                 />

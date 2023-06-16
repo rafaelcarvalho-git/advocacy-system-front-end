@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-function State({ setState }) {
+const State = ({ setState }) => {
   return (
     <S.State>
       <label htmlFor='state'>

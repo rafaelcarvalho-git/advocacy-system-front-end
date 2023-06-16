@@ -3,20 +3,15 @@ import { useState, useEffect, useCallback } from 'react'
 import Header from 'components/Container/Header'
 import { Button, Statistic, message } from 'antd'
 import CountUp from 'react-countup'
-import {
-  BsCalendarWeekFill,
-  BsFileEarmarkTextFill,
-  BsFillFileEarmarkCheckFill,
-  BsFillFileEarmarkExcelFill,
-  BsFillGrid1X2Fill,
-} from 'react-icons/bs'
-import { FaUserAlt } from 'react-icons/fa'
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+import PersonIcon from '@mui/icons-material/Person'
+import DashboardIcon from '@mui/icons-material/Dashboard'
 import Loader from 'components/Loader'
 import dashboard from 'services/dashboard/dashboard'
 import listCollaborators from 'services/collaborator/listCollaborators'
 import UploadData from 'components/UploadData'
 
-function Dashboard() {
+const Dashboard = () => {
   const [loading, setLoading] = useState(true)
   const [dashboardData, setDashboardData] = useState({})
 
@@ -51,7 +46,7 @@ function Dashboard() {
         pageTitle='Dashboard'
         pageDesc='Informações gerais sobre os processos e o sistema.'
       >
-        <BsFillGrid1X2Fill />
+        <DashboardIcon />
       </Header>
 
       {loading ? (
@@ -68,10 +63,10 @@ function Dashboard() {
                 <p>Processos Ativos</p>
               </S.CardInfo>
               <S.CardIcon>
-                <BsFileEarmarkTextFill />
+                <PersonIcon />
               </S.CardIcon>
               <UploadData open={showUpload} setIsOpen={setShowUpload} />
-              <Button type="primary" onClick={() => setShowUpload(true)}>asdasd</Button>
+              <Button type='primary' onClick={() => setShowUpload(true)}>asdasd</Button>
             </S.DataCard>
 
             <S.DataCard>
@@ -87,7 +82,7 @@ function Dashboard() {
                 <p>Processos Ativos</p>
               </S.CardInfo>
               <S.CardIcon>
-                <BsFileEarmarkTextFill />
+                <PersonIcon />
               </S.CardIcon>
             </S.DataCard>
 
@@ -104,7 +99,7 @@ function Dashboard() {
                 <p>Processos Concluidos</p>
               </S.CardInfo>
               <S.CardIcon>
-                <BsFillFileEarmarkCheckFill />
+                <PersonIcon />
               </S.CardIcon>
             </S.DataCard>
 
@@ -121,7 +116,7 @@ function Dashboard() {
                 <p>Processos Vencidos</p>
               </S.CardInfo>
               <S.CardIcon>
-                <BsFillFileEarmarkExcelFill />
+                <PersonIcon />
               </S.CardIcon>
             </S.DataCard>
 
@@ -138,7 +133,7 @@ function Dashboard() {
                 <p>Vencimento Próximo</p>
               </S.CardInfo>
               <S.CardIcon>
-                <BsCalendarWeekFill />
+                <CalendarMonthIcon />
               </S.CardIcon>
             </S.DataCard>
           </S.CardGroup>
@@ -157,7 +152,7 @@ function Dashboard() {
                 <p>Usuarios Cadastrados</p>
               </S.CardInfo>
               <S.CardIcon>
-                <FaUserAlt />
+                <PersonIcon />
               </S.CardIcon>
             </S.DataCard>
           </S.CardGroup>

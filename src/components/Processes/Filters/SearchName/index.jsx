@@ -1,7 +1,7 @@
 import * as S from './styles'
-import { BsSearch } from 'react-icons/bs'
+import SearchIcon from '@mui/icons-material/Search'
 
-function Search({ setSearchName }) {
+const Search({ setSearchName }) {
   return (
     <S.SearchBar>
       <label htmlFor='searchName'>
@@ -11,7 +11,7 @@ function Search({ setSearchName }) {
         id='searchName'
         size='large'
         placeholder='Nome do cliente'
-        suffix={<BsSearch />}
+        suffix={<SearchIcon />}
         allowClear
         onChange={e => setSearchName(e.target.value.toLowerCase())}
       />

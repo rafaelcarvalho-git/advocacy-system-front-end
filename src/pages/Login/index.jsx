@@ -1,7 +1,7 @@
 import { BgContent } from 'assets/global'
 import LoginForm from 'components/Login'
 
-function Login() {
+const Login = () => {
   return (
     <BgContent>
       <LoginForm />

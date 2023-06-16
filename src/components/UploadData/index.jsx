@@ -52,7 +52,7 @@ const UploadData = ({ open, setIsOpen }) => {
 
     return (
         <Modal
-            title="Atualizar Banco de Dados"
+            title='Atualizar Banco de Dados'
             open={open}
             onOk={handleOk}
             okText='Enviar Dados'
@@ -74,7 +74,7 @@ const UploadData = ({ open, setIsOpen }) => {
                     ''
                 )}
             </S.Upload>
-        </Modal>
+        </Modal >
     )
 }
 

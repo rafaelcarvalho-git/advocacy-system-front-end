@@ -4,12 +4,12 @@ import ProcessInformations from 'components/Processes/ProcessInformations'
 import ProcessHeader from './ProcessHeader'
 import ProcessActions from './ProcessActions'
 
-function Processes({ processes = [], isConcluded, isActive, successCallback }) {
+const ListProcesses = ({ processes = [], isConcluded, isActive, successCallback }) => {
   const changeColor = diasVencimento => {
     var colorBadge = ''
     if (diasVencimento <= 2) {
       colorBadge = '#52c41a'
-    } else if (diasVencimento == 3) {
+    } else if (diasVencimento === 3) {
       colorBadge = '#faad14'
     } else {
       colorBadge = '#f5222d'
@@ -24,7 +24,7 @@ function Processes({ processes = [], isConcluded, isActive, successCallback }) {
     const month = String(date.getUTCMonth() + 1).padStart(2, '0')
     const year = date.getUTCFullYear()
     const formattedDate = `${day}/${month}/${year}`
-  
+
     return formattedDate
   }
 
@@ -42,7 +42,7 @@ function Processes({ processes = [], isConcluded, isActive, successCallback }) {
                 badgeCount={
                   isActive
                     ? process.DiasVencimento +
-                      (process.DiasVencimento != 'Vencido' ? ' dia(s)' : '')
+                    (process.DiasVencimento !== 'Vencido' ? ' dia(s)' : '')
                     : formatDate(process.DataConclusao)
                 }
                 badgeColor={changeColor(process.DiasVencimento)}
@@ -71,4 +71,4 @@ function Processes({ processes = [], isConcluded, isActive, successCallback }) {
   )
 }
 
-export default Processes
+export default ListProcesses

@@ -6,7 +6,7 @@ import createCollaborator from 'services/collaborator/createCollaborator'
 import ReactLoading from 'react-loading'
 import { useNavigate } from 'react-router-dom'
 
-function NewUserForm() {
+const NewUserForm = () => {
   const [userCreate, setUserForm] = useState({
     first_name: '',
     last_name: '',
@@ -23,7 +23,7 @@ function NewUserForm() {
 
   let navigate = useNavigate()
 
-  function NewUser() {
+  const NewUser = () => {
     const isNotEmpty =
       userCreate.first_name !== '' &&
       userCreate.last_name !== '' &&

@@ -5,8 +5,8 @@ import { copy } from 'utils/copy'
 import PhoneIcon from '@mui/icons-material/Phone'
 import EmailIcon from '@mui/icons-material/Email'
 import BuildIcon from '@mui/icons-material/Build'
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import ApartmentIcon from '@mui/icons-material/Apartment';
+import LocationOnIcon from '@mui/icons-material/LocationOn'
+import ApartmentIcon from '@mui/icons-material/Apartment'
 
 
 const ListOffices = ({ collaborators, successCallback }) => {

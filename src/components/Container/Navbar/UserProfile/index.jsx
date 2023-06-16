@@ -22,15 +22,15 @@ const UserProfile = ({ setLogout }) => {
         <div sx={{ flexGrow: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <h4>{userName}</h4>
-                <Tooltip title="Open options">
+                <Tooltip title='Open options'>
                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                        <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                        <Avatar alt='User' src='/static/images/avatar/2.jpg' />
                     </IconButton>
                 </Tooltip>
-            </div>
+            </div >
             <Menu
                 sx={{ mt: '45px' }}
-                id="menu-appbar"
+                id='menu-appbar'
                 anchorEl={anchorElUser}
                 anchorOrigin={{
                     vertical: 'top',
@@ -46,12 +46,12 @@ const UserProfile = ({ setLogout }) => {
             >
 
                 <MenuItem onClick={() => handleCloseUserMenu()}>
-                    <Typography textAlign="center">Logout</Typography>
+                    <Typography textAlign='center'>Logout</Typography>
                     <ExitToAppIcon style={{ marginLeft: '5px' }} />
                 </MenuItem>
 
-            </Menu>
-        </div>
+            </Menu >
+        </div >
     )
 }
 

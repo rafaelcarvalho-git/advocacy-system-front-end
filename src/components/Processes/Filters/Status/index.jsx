@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-function Status({ setProcessStatus }) {
+const Status = ({ setProcessStatus }) => {
   return (
     <S.Status>
       <label htmlFor='status'>

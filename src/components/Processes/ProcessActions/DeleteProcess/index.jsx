@@ -3,8 +3,8 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import { CloseCircleFilled } from '@ant-design/icons'
 import deleteProcess from 'services/processes/deleteProcess'
 
-function DeleteProcess({ processId, successCallback }) {
-  async function handleDelete() {
+const DeleteProcess = ({ processId, successCallback }) => {
+  const handleDelete = async () => {
     deleteProcess(processId).then(() => {
       successCallback()
       message.success('Processo deletado com sucesso!')

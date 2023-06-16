@@ -6,7 +6,7 @@ import Collaborator from './Collaborator'
 import State from './State'
 import Status from './Status'
 
-function Filters({
+const Filters = ({
   isActive,
   setSearchCTO,
   setExpireDate,
@@ -14,7 +14,7 @@ function Filters({
   setProcessStatus,
   setStartDate,
   setResponsible,
-}) {
+}) => {
   return (
     <S.Filtering>
       <SearchCTO setSearchCTO={setSearchCTO} />

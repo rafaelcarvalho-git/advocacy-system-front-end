@@ -7,7 +7,7 @@ import ReactLoading from 'react-loading'
 import { useNavigate } from 'react-router-dom'
 import useLogin from 'contexts/LoginContext'
 
-function LoginForm() {
+const LoginForm = () => {
   const [userLogin, setUserLogin] = useState({
     email: '',
     password: '',
@@ -20,7 +20,7 @@ function LoginForm() {
 
   const navigate = useNavigate()
 
-  function Auth() {
+  const Auth = () => {
     if (userLogin.email !== '' && userLogin.password !== '') {
       setLoading(true)
       login(userLogin)

@@ -3,12 +3,12 @@ import { Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem } fr
 import MenuIcon from '@mui/icons-material/Menu'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import ArticleIcon from '@mui/icons-material/Article'
-import PersonIcon from '@mui/icons-material/Person'
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt'
 import UserProfile from './UserProfile'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
-const pages = [{ item: 'Dashboard', icon: <DashboardIcon />, link: '/dashboard' }, { item: 'Processos', icon: <ArticleIcon />, link: '/processos' }, { item: 'Cadastros', icon: <PersonIcon />, link: '/cadastros' }]
+const pages = [{ item: 'Dashboard', icon: <DashboardIcon />, link: '/dashboard' }, { item: 'Processos', icon: <ArticleIcon />, link: '/processos' }, { item: 'Cadastros', icon: <PeopleAltIcon />, link: '/cadastros' }]
 
 const Navbar = ({ setLogout }) => {
     const [openNavMenu, setOpenNavMenu] = useState(null)
@@ -22,23 +22,23 @@ const Navbar = ({ setLogout }) => {
     }
 
     return (
-        <S.Nav position="static">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
+        <S.Nav position='static'>
+            <Container maxWidth='xl'>
+                < Toolbar disableGutters >
                     <S.MobileMenu sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="mobile-menu"
-                            aria-haspopup="true"
+                            size='large'
+                            aria-label='account of current user'
+                            aria-controls='mobile-menu'
+                            aria-haspopup='true'
                             onClick={handleOpenNavMenu}
-                            color="inherit"
+                            color='inherit'
                         >
                             <MenuIcon />
                         </IconButton>
 
                         <Menu
-                            id="mobile-menu"
+                            id='mobile-menu'
                             anchorEl={openNavMenu}
                             anchorOrigin={{
                                 vertical: 'bottom',
@@ -55,15 +55,17 @@ const Navbar = ({ setLogout }) => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map(({ item, icon, link }) => (
-                                <NavLink to={link}>
-                                    <MenuItem key={item} onClick={() => handleCloseNavMenu()}>
-                                        <Typography textAlign="center" sx={{ color: 'black', display: 'flex', alignItems: 'center', gap: '5px' }}> {icon} {item}</Typography>
-                                    </MenuItem>
-                                </NavLink>
-                            ))}
-                        </Menu>
-                    </S.MobileMenu>
+                            {
+                                pages.map(({ item, icon, link }) => (
+                                    <NavLink to={link}>
+                                        <MenuItem key={item} onClick={() => handleCloseNavMenu()}>
+                                            <Typography textAlign='center' sx={{ color: ' black', display: 'flex', alignItems: 'center', gap: '5px' }}> {icon} {item}</Typography>
+                                        </MenuItem>
+                                    </NavLink >
+                                ))
+                            }
+                        </Menu >
+                    </S.MobileMenu >
 
                     <S.DesktopMenu sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map(({ item, icon, link }) => (
@@ -79,8 +81,8 @@ const Navbar = ({ setLogout }) => {
                         ))}
                     </S.DesktopMenu>
                     <UserProfile setLogout={setLogout} />
-                </Toolbar>
-            </Container>
+                </Toolbar >
+            </Container >
         </S.Nav >
     )
 }

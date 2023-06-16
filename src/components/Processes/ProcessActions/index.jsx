@@ -6,7 +6,7 @@ import AtributeProcess from './AtributeProcess'
 import InsertFolderLink from './InsertFolderLink'
 import SetStatusProcess from './SetStatusProcess'
 
-function ProcessActions({ processId, successCallback }) {
+const ProcessActions = ({ processId, successCallback }) => {
   return (
     <S.Actions>
       {isAdmin() && (

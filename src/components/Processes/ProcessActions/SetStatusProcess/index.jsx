@@ -1,14 +1,14 @@
 import { Button, Popconfirm, Radio, Space, message } from 'antd'
 import { primaryColor } from 'assets/global'
 import { useState } from 'react'
-import { BsListUl } from 'react-icons/bs'
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted'
 import setStatusProcess from 'services/processes/setStatusProcess'
 
-function SetStatusProcess({ processId, successCallback }) {
+const SetStatusProcess = ({ processId, successCallback }) => {
   const [value, setValue] = useState(null)
   const [processStatus, setProcessStatus] = useState()
 
-  async function handleAtribute() {
+  const handleAtribute = async () => {
     const status = processStatus
     setStatusProcess(processId, status).then(() => {
       successCallback()
@@ -44,10 +44,10 @@ function SetStatusProcess({ processId, successCallback }) {
       onConfirm={handleAtribute}
       okText='Definir'
       cancelText='Cancelar'
-      icon={<BsListUl style={{ color: primaryColor }} />}
+      icon={<FormatListBulletedIcon style={{ color: primaryColor, fontSize: '18px' }} />}
     >
       <Button type='primary' ghost>
-        <BsListUl />
+        <FormatListBulletedIcon />
       </Button>
     </Popconfirm>
   )

@@ -2,7 +2,7 @@ import * as S from './styles'
 import { findProcessItems } from './dummy'
 import { copy } from 'utils/copy'
 
-function ProcessInformations({ process }) {
+const ProcessInformations = ({ process }) => {
   const processItems = findProcessItems(process)
 
   return (

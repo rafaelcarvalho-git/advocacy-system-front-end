@@ -1,13 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt'
 import { message } from 'antd'
 import Header from 'components/Container/Header'
 import Loader from 'components/Loader'
 import ListRegistrations from 'components/Registrations'
-import RegistrationsMenu from 'components/Registrations/RegistrationsMenu'
 import listCollaborators from 'services/collaborator/listCollaborators'
 
-function Registrations() {
+const Registrations = () => {
   const [collaborators, setCollaborators] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -34,7 +33,7 @@ function Registrations() {
         pageTitle='Cadastros'
         pageDesc='Lista com todos os usuários, escritórios e advogados cadastrados.'
       >
-        <BsFillPersonLinesFill />
+        <PeopleAltIcon />
       </Header>
 
       {loading ? (

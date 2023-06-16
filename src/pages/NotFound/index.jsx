@@ -5,7 +5,7 @@ import Header from 'components/Container/Header'
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 
-function NotFound() {
+const NotFound = () => {
   const navigate = useNavigate()
 
   return (

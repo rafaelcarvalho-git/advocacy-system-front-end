@@ -2,7 +2,7 @@ import * as S from './styles'
 import { Badge, Tag } from 'antd'
 import { primaryColor } from 'assets/global'
 
-function ProcessHeader({ process, isConcluded, badgeCount, badgeColor }) {
+const ProcessHeader = ({ process, isConcluded, badgeCount, badgeColor }) => {
   return (
     <S.PHeader>
       <b>{process.CodCausa}</b>

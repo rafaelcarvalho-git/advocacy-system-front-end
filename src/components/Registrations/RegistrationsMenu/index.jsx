@@ -1,9 +1,8 @@
-import { useState } from 'react'
 import { Menu } from 'antd'
 import { NavLink } from 'react-router-dom'
-import { BsFillPersonFill } from 'react-icons/bs'
-import { HiOutlineOfficeBuilding } from 'react-icons/hi'
-import { VscLaw } from 'react-icons/vsc'
+import PersonIcon from '@mui/icons-material/Person'
+import BalanceIcon from '@mui/icons-material/Balance'
+import ApartmentIcon from '@mui/icons-material/Apartment'
 
 const menuItems = [
     {
@@ -13,7 +12,7 @@ const menuItems = [
             </NavLink>
         ),
         key: 'users',
-        icon: <BsFillPersonFill />,
+        icon: <PersonIcon />,
     },
     {
         label: (
@@ -22,7 +21,7 @@ const menuItems = [
             </NavLink>
         ),
         key: 'lawyers',
-        icon: <VscLaw />,
+        icon: <BalanceIcon />,
     },
     {
         label: (
@@ -31,7 +30,7 @@ const menuItems = [
             </NavLink>
         ),
         key: 'offices',
-        icon: <HiOutlineOfficeBuilding />,
+        icon: <ApartmentIcon />,
     }
 ]
 
@@ -42,7 +41,7 @@ const RegistrationsMenu = ({ menuOption, setMenuOption }) => {
     }
 
     return (
-        <Menu onClick={menuFunction} selectedKeys={[menuOption]} mode="horizontal" items={menuItems} style={{ justifyContent: 'center' }} />
+        <Menu onClick={menuFunction} selectedKeys={[menuOption]} mode='horizontal' items={menuItems} style={{ justifyContent: ' center' }} />
     )
 }
 

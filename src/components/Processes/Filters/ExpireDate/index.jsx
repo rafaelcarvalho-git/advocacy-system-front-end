@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-function ExpireDate({ setExpireDate }) {
+const ExpireDate = ({ setExpireDate }) => {
   return (
     <S.Expire>
       <label htmlFor='expireDate'>

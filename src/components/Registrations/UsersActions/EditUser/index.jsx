@@ -4,12 +4,12 @@ import { Input, Checkbox, message } from 'antd'
 import editCollaborator from 'services/collaborator/saveCollaborator'
 import validateCollaborator from 'services/collaborator/validateCollaborator'
 
-function EditUser({
+const EditUser = ({
   editUser,
   setEditUser,
   collaboratorData,
   successCallback,
-}) {
+}) => {
   const [userEdit, setUserForm] = useState({
     first_name: collaboratorData.first_name,
     last_name: collaboratorData.last_name,

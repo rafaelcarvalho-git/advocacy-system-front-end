@@ -2,7 +2,7 @@ import * as S from './styles'
 import { useState, useEffect, useCallback } from 'react'
 import listCollaborators from 'services/collaborator/listCollaborators'
 
-function Collaborator({ setResponsible }) {
+const Collaborator = ({ setResponsible }) => {
   const [collaborators, setCollaborators] = useState()
 
   const fetchCollaborators = useCallback(() => {
@@ -31,9 +31,9 @@ function Collaborator({ setResponsible }) {
           { value: '', label: 'Todos' },
           ...(collaborators && Array.isArray(collaborators)
             ? collaborators.map(col => ({
-                value: col.id,
-                label: `${col.first_name} ${col.last_name}`,
-              }))
+              value: col.id,
+              label: `${col.first_name} ${col.last_name}`,
+            }))
             : []), // Adicione a verificação para garantir que collaborators seja um array antes de mapeá-lo
         ]}
       />

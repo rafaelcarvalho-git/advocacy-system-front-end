@@ -1,11 +1,11 @@
 import { Button, Popconfirm, Radio, Space, message } from 'antd'
 import { primaryColor } from 'assets/global'
 import { useState, useEffect, useCallback } from 'react'
-import { BsFillPersonPlusFill } from 'react-icons/bs'
+import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import listCollaborators from 'services/collaborator/listCollaborators'
 import atributeProcess from 'services/processes/atributeProcess'
 
-function AtributeProcess({ processId, successCallback }) {
+const AtributeProcess = ({ processId, successCallback }) => {
   const [value, setValue] = useState(null)
   const [user, setUser] = useState()
   const [collaborators, setCollaborators] = useState()
@@ -20,7 +20,7 @@ function AtributeProcess({ processId, successCallback }) {
     fetchCollaborators()
   }, [fetchCollaborators])
 
-  async function handleAtribute() {
+  const handleAtribute = async () => {
     const userInfo = user
     atributeProcess(
       processId,
@@ -60,10 +60,10 @@ function AtributeProcess({ processId, successCallback }) {
       onConfirm={handleAtribute}
       okText='Atribuir'
       cancelText='Cancelar'
-      icon={<BsFillPersonPlusFill style={{ color: primaryColor }} />}
+      icon={<PersonAddIcon style={{ color: primaryColor, fontSize: '18px' }} />}
     >
       <Button type='primary' ghost>
-        <BsFillPersonPlusFill />
+        <PersonAddIcon />
       </Button>
     </Popconfirm>
   )

@@ -4,12 +4,12 @@ import { Input, Modal, message } from 'antd'
 import deleteCollaborator from 'services/collaborator/deleteCollaborator'
 import validateCollaborator from 'services/collaborator/validateCollaborator'
 
-function DeleteUser({
+const DeleteUser = ({
   deleteUser,
   setDeleteUser,
   collaboratorData,
   successCallback,
-}) {
+}) => {
   const [exclude, setExclude] = useState('')
   const [incorrectInfo, setIncorrectInfo] = useState(false)
   const [incorrectPhrase, setIncorrectPhrase] = useState('')

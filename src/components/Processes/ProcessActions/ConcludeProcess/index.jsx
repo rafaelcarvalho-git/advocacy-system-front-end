@@ -1,10 +1,10 @@
 import { Button, Popconfirm, message } from 'antd'
-import { BsCheckLg } from 'react-icons/bs'
+import CheckIcon from '@mui/icons-material/Check'
 import { CheckCircleFilled } from '@ant-design/icons'
 import concludeProcess from 'services/processes/concludeProcess'
 
-function ConcludeProcess({ processId, successCallback }) {
-  async function handleConclude() {
+const ConcludeProcess = ({ processId, successCallback }) => {
+  const handleConclude = async () => {
     const now = new Date()
     const day = now.getDate().toString().padStart(2, '0')
     const month = (now.getMonth() + 1).toString().padStart(2, '0')
@@ -28,7 +28,7 @@ function ConcludeProcess({ processId, successCallback }) {
       icon={<CheckCircleFilled style={{ color: '#52c41a' }} />}
     >
       <Button type='primary'>
-        <BsCheckLg />
+        <CheckIcon />
       </Button>
     </Popconfirm>
   )

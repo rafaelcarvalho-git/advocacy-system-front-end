@@ -5,8 +5,8 @@ import { copy } from 'utils/copy'
 import PhoneIcon from '@mui/icons-material/Phone'
 import EmailIcon from '@mui/icons-material/Email'
 import BuildIcon from '@mui/icons-material/Build'
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import ApartmentIcon from '@mui/icons-material/Apartment';
+import PersonIcon from '@mui/icons-material/Person'
+import ApartmentIcon from '@mui/icons-material/Apartment'
 
 
 const ListLawyers = ({ collaborators, successCallback }) => {
@@ -18,7 +18,7 @@ const ListLawyers = ({ collaborators, successCallback }) => {
             <S.Table>
                 <thead>
                     <tr>
-                        <th>Advogado</th>
+                        <th><div><PersonIcon /><p>Advogado</p></div></th>
                         <th><div><ApartmentIcon /><p>Escritório</p></div></th>
                         <th><div><PhoneIcon /><p>Telefone</p></div></th>
                         <th><div><EmailIcon /><p>E-mail</p></div></th>

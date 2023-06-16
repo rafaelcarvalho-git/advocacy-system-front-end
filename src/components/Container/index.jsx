@@ -5,7 +5,7 @@ import { checkUserLogged } from 'utils/UserAuthorization'
 import { useState } from 'react'
 import Navbar from './Navbar'
 
-function Container() {
+const Container = () => {
   const userLogged = checkUserLogged()
   const [showLogout, setShowLogout] = useState(false)
   return (

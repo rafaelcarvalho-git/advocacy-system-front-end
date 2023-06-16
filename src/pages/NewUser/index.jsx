@@ -1,7 +1,7 @@
 import { BgContent } from 'assets/global'
 import NewUserForm from 'components/NewUser'
 
-function NewUser() {
+const NewUser = () => {
   return (
     <BgContent>
       <NewUserForm />
