@@ -1,14 +1,9 @@
 import * as S from './styles'
-import { message } from 'antd'
 import { findProcessItems } from './dummy'
+import { copy } from 'utils/copy'
 
 function ProcessInformations({ process }) {
   const processItems = findProcessItems(process)
-
-  function copy(text) {
-    navigator.clipboard.writeText(text)
-    message.success(`${text} copiado!`)
-  }
 
   return (
     <S.InformacoesProcesso>
