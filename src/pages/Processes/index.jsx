@@ -1,0 +1,30 @@
+import { useState, useEffect, useCallback } from 'react'
+import { BsFileEarmarkTextFill } from 'react-icons/bs'
+import Header from 'components/Container/Header'
+import ProcessessMenu from 'components/Processes/ProcessesMenu'
+import ActiveProcesses from 'components/Processes/ActiveProcesses'
+import ConcludedProcesses from 'components/Processes/ConcludedProcesses'
+
+
+const Processes = () => {
+    const [menuOption, setMenuOption] = useState('ativos')
+
+    return (
+        <>
+            <Header
+                pageTitle='Processos'
+                pageDesc='Lista com todos os processos ativos ou pendentes do sistema.'
+            >
+                <BsFileEarmarkTextFill />
+            </Header>
+
+            <ProcessessMenu menuOption={menuOption} setMenuOption={setMenuOption} />
+
+            <>
+                {menuOption === 'ativos' && <ActiveProcesses />}
+                {menuOption === 'concluidos' && <ConcludedProcesses />}
+            </>
+        </>
+    )
+}
+export default Processes
