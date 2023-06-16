@@ -1,40 +1,30 @@
-import { useState } from 'react'
-import { Modal } from 'antd'
-import useLogin from 'contexts/LoginContext'
-import { useNavigate } from 'react-router-dom';
-
-
 import * as S from './styles.js'
+import { useState } from 'react'
+import { Modal, message } from 'antd'
 import UploadFile from 'components/UploadData/UploadFile/index.jsx'
-import { ImFolderUpload } from 'react-icons/im'
-import { message } from 'antd'
-import ReactLoading from 'react-loading'
 import createProcess from 'services/processes/createProcess'
 
-function UploadData({ open, setIsOpen }) {
-    const [confirmLoading, setConfirmLoading] = useState(false);
-    const [loading, setLoading] = useState(false)
+
+const UploadData = ({ open, setIsOpen }) => {
+    const [confirmLoading, setConfirmLoading] = useState(false)
     const [incorrectUpload, setIncorrectUpload] = useState(false)
     const [incorrectPhrase, setIncorrectPhrase] = useState('')
     const [file, setFile] = useState()
     const handleUploadFile = e => setFile(e.target.files[0])
-    const { performLogout } = useLogin()
-    const navigate = useNavigate()
 
-
-
-
-
-
-    async function Upload() {
+    const Upload = async () => {
         const data = new FormData()
         if (file) {
-            setLoading(true)
+            confirmLoading(true)
             setIncorrectUpload(false)
             data.append('file', file)
             createProcess(data)
                 .then(() => {
                     message.success(`${file.name} carregado com sucesso!`)
+                    setTimeout(() => {
+                        setIsOpen(false)
+                        setConfirmLoading(false)
+                    }, 1200)
                 })
                 .catch(error => {
                     setIncorrectUpload(true)
@@ -43,7 +33,7 @@ function UploadData({ open, setIsOpen }) {
                     )
                 })
                 .finally(() => {
-                    setLoading(false)
+                    confirmLoading(false)
                 })
         } else {
             setIncorrectUpload(true)
@@ -52,17 +42,12 @@ function UploadData({ open, setIsOpen }) {
     }
 
     const handleOk = () => {
-        setConfirmLoading(true)
         Upload()
-        setTimeout(() => {
-            setIsOpen(false);
-            setConfirmLoading(false);
-        }, 1200);
-    };
+    }
 
     const handleCancel = () => {
-        setIsOpen(false);
-    };
+        setIsOpen(false)
+    }
 
 
     return (
@@ -90,7 +75,7 @@ function UploadData({ open, setIsOpen }) {
                 )}
             </S.Upload>
         </Modal>
-    );
-};
+    )
+}
 
-export default UploadData;
+export default UploadData

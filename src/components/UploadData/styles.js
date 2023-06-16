@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import { Button } from 'antd'
-import { primaryColor } from 'assets/global'
 
 export const Upload = styled.div`
   max-width: 800px;
