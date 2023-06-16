@@ -7,10 +7,9 @@ import Registrations from 'pages/Registrations'
 import NotFound from 'pages/NotFound'
 import NewUser from 'pages/NewUser'
 import Container from 'components/Container'
-import PrivatePage from 'components/PrivatePage'
+import PrivatePage from 'components/Router/PrivatePage'
 import useLogin from 'contexts/LoginContext'
-import { isAdmin } from 'utils/permissions'
-import { cleanUserToken } from 'utils/UserAuthorization'
+
 
 const Router = () => {
   const { userLogged } = useLogin()
