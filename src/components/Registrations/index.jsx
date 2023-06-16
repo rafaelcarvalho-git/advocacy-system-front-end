@@ -2,7 +2,12 @@ import * as S from './styles'
 import UsersActions from './UsersActions'
 import { getUserCachedData } from 'utils/UserAuthorization'
 import { copy } from 'utils/copy'
-
+import PhoneIcon from '@mui/icons-material/Phone'
+import PersonIcon from '@mui/icons-material/Person'
+import EmailIcon from '@mui/icons-material/Email'
+import LockPersonIcon from '@mui/icons-material/LockPerson'
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd'
+import BuildIcon from '@mui/icons-material/Build'
 
 const Registrations = ({ collaborators, successCallback }) => {
   const userData = getUserCachedData()
@@ -13,12 +18,12 @@ const Registrations = ({ collaborators, successCallback }) => {
       <S.Table>
         <thead>
           <tr>
-            <th>Colaborador</th>
-            <th>E-mail</th>
-            <th>Telefone</th>
-            <th>Cpf</th>
-            <th>Admin</th>
-            {isAdmin && <th>Ações</th>}
+            <th><div><PersonIcon /><p>Usuário</p></div></th>
+            <th><div><EmailIcon /><p>E-mail</p></div></th>
+            <th><div><PhoneIcon /><p>Telefone</p></div></th>
+            <th><div><AssignmentIndIcon /><p>Cpf</p></div></th>
+            <th><div><LockPersonIcon /><p>Admin</p></div></th>
+            {isAdmin && <th><div><BuildIcon /><p>Ações</p></div></th>}
           </tr>
         </thead>
         <tbody>

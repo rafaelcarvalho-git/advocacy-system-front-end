@@ -18,6 +18,12 @@ export const Table = styled.table`
     padding: 12px 18px 12px 18px;
   }
 
+  & thead div {
+    display: flex !important;
+    align-items: end;
+    gap: 5px; 
+  }
+
   & tr td {
     padding: 12px 18px 12px 18px;
     cursor: pointer;

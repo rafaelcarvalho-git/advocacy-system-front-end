@@ -1,18 +1,20 @@
 import * as S from './styles'
 import { useState } from 'react'
 import { Button } from 'antd'
-import { BsPencilFill, BsFillTrashFill } from 'react-icons/bs'
-import DeleteUser from 'components/ListRegistrations/UsersActions/DeleteUser'
-import EditUser from 'components/ListRegistrations/UsersActions/EditUser'
+import EditIcon from '@mui/icons-material/Edit'
+import DeleteIcon from '@mui/icons-material/Delete'
+import DeleteUser from 'components/Registrations/UsersActions/DeleteUser'
+import EditUser from 'components/Registrations/UsersActions/EditUser'
 
-function UsersActions({ collaboratorData, successCallback }) {
+
+const UsersActions = ({ collaboratorData, successCallback }) => {
   const [editUser, setEditUser] = useState(false)
   const [deleteUser, setDeleteUser] = useState(false)
 
   return (
     <S.Actions>
       <Button type='primary' ghost onClick={() => setEditUser(true)}>
-        <BsPencilFill />
+        <EditIcon />
       </Button>
       <EditUser
         editUser={editUser}
@@ -21,7 +23,7 @@ function UsersActions({ collaboratorData, successCallback }) {
         successCallback={successCallback}
       />
       <Button onClick={() => setDeleteUser(true)}>
-        <BsFillTrashFill />
+        <DeleteIcon />
       </Button>
       <DeleteUser
         deleteUser={deleteUser}

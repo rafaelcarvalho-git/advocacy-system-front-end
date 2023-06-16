@@ -3,8 +3,8 @@ import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { message } from 'antd'
 import Header from 'components/Container/Header'
 import Loader from 'components/Loader'
-import ListRegistrations from 'components/ListRegistrations'
-import RegistrationsMenu from 'components/ListRegistrations/RegistrationsMenu'
+import ListRegistrations from 'components/Registrations'
+import RegistrationsMenu from 'components/Registrations/RegistrationsMenu'
 import listCollaborators from 'services/collaborator/listCollaborators'
 
 function Registrations() {

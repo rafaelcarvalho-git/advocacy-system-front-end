@@ -1,5 +1,5 @@
 import { Button, Popconfirm, message } from 'antd'
-import { BsFillTrashFill } from 'react-icons/bs'
+import DeleteIcon from '@mui/icons-material/Delete'
 import { CloseCircleFilled } from '@ant-design/icons'
 import deleteProcess from 'services/processes/deleteProcess'
 
@@ -22,7 +22,7 @@ function DeleteProcess({ processId, successCallback }) {
       icon={<CloseCircleFilled style={{ color: '#f5222d' }} />}
     >
       <Button>
-        <BsFillTrashFill />
+        <DeleteIcon />
       </Button>
     </Popconfirm>
   )
