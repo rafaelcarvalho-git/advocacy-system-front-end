@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 import * as S from './styles.js'
-import UploadFile from 'components/UploadFile'
+import UploadFile from 'components/UploadData/UploadFile/index.jsx'
 import { ImFolderUpload } from 'react-icons/im'
 import { message } from 'antd'
 import ReactLoading from 'react-loading'
@@ -67,38 +67,28 @@ function UploadData({ open, setIsOpen }) {
 
     return (
         <Modal
-            title="Atualizar Processos"
+            title="Atualizar Banco de Dados"
             open={open}
             onOk={handleOk}
             okText='Enviar Dados'
             confirmLoading={confirmLoading}
             onCancel={handleCancel}
         >
-            <>
-                <h2>Atualizar banco de dados</h2>
-                <p style={{ marginTop: '8px', color: 'rgba(0, 0, 0, 0.65)' }}>Realize o upload de uma ou mais arquivos para atualizar o sistema com novos processos.</p>
-
-
-                <S.Upload>
-                    <S.UploadArea>
-                        <p style={{ fontSize: '18px' }}>Clique e selecione o arquivo</p>
-                        <S.UploadText>
-                            Suba a planilha com os processos para atualizar os dados do sistema.
-                        </S.UploadText>
-                        <S.UploadText>
-                            (Somente arquivos <b>.csv</b>)
-                        </S.UploadText>
-                        <UploadFile onChange={handleUploadFile} file={file} />
-                        {incorrectUpload ? (
-                            <S.UploadError>{incorrectPhrase}</S.UploadError>
-                        ) : (
-                            ''
-                        )}
-                    </S.UploadArea>
-                </S.Upload>
-            </>
-
-
+            <S.Upload>
+                <S.UploadText>
+                    Realize o upload da planilha com os dados para atualizar os processos do sistema.
+                </S.UploadText>
+                <S.UploadText>
+                    (Somente arquivos <b>.csv</b>)
+                </S.UploadText>
+                <p style={{ fontSize: '18px' }}>Clique e selecione o arquivo</p>
+                <UploadFile onChange={handleUploadFile} file={file} />
+                {incorrectUpload ? (
+                    <S.UploadError>{incorrectPhrase}</S.UploadError>
+                ) : (
+                    ''
+                )}
+            </S.Upload>
         </Modal>
     );
 };

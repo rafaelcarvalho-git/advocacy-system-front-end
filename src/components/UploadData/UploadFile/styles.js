@@ -18,8 +18,9 @@ export const FileLabel = styled.label`
   margin-left: 12px;
   margin-right: 12px;
   padding: 12px 18px 12px 18px;
-  border: 1px solid ${primaryColor};
+  border: 1px dashed ${primaryColor};
   border-radius: 0.5rem;
+  cursor: pointer;
 
   @media (max-width: 540px) {
     flex-direction: column;
@@ -27,7 +28,13 @@ export const FileLabel = styled.label`
   }
 `
 
-export const FileName = styled.span``
+export const FileName = styled.span`
+  &:hover,
+  &:focus,
+  &:active {
+    color: ${primaryColor};
+  }
+`
 
 export const FileButton = styled.span`
   padding: 9px 12px 9px 12px;
@@ -40,7 +47,7 @@ export const FileButton = styled.span`
   &:hover,
   &:focus,
   &:active {
-    background: #993250;
+    background: #34aad9;
   }
 
   @media (max-width: 540px) {

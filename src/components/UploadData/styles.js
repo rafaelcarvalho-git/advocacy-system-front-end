@@ -4,21 +4,13 @@ import { primaryColor } from 'assets/global'
 
 export const Upload = styled.div`
   max-width: 800px;
-  margin: 64px auto auto auto;
+  margin: 24px auto 32px auto;
   text-align: center;
-`
-
-export const UploadArea = styled.div`
-  padding-top: 24px;
-  padding-bottom: 24px;
-  border: 2px dashed ${primaryColor};
-  border-radius: 1rem;
-  cursor: pointer;
 `
 
 export const UploadText = styled.p`
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.65);
   margin-top: 12px;
   margin-bottom: 24px;
 `
