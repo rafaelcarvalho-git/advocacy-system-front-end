@@ -1,7 +1,7 @@
 import * as S from './styles'
 import SearchIcon from '@mui/icons-material/Search'
 
-const Search({ setSearchName }) {
+const Search = ({ setSearchName }) => {
   return (
     <S.SearchBar>
       <label htmlFor='searchName'>
