@@ -12,70 +12,67 @@ import RegistrationsOptions from '../RegistrationsOptions'
 import { useState } from 'react'
 
 
-const ListUsers = ({ collaborators, successCallback }) => {
+const ListUsers = ({ collaborators, successCallback, userType }) => {
     const [search, setSearch] = useState('')
     const userData = getUserCachedData()
     const isAdmin = userData.admin
 
     return (
-        <>
-            <RegistrationsOptions label={'Usuário'} placeholder={'Nome do Usuario'} setSearch={'a'} />
-            <S.TableContent>
-                <S.Table>
-                    <thead>
-                        <tr>
-                            <th><div><PersonIcon /><p>Usuário</p></div></th>
-                            <th><div><EmailIcon /><p>E-mail</p></div></th>
-                            <th><div><PhoneIcon /><p>Telefone</p></div></th>
-                            <th><div><AssignmentIndIcon /><p>Cpf</p></div></th>
-                            <th><div><LockPersonIcon /><p>Admin</p></div></th>
-                            {isAdmin && <th><div><BuildIcon /><p>Ações</p></div></th>}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {collaborators?.map(
-                            ({ id, first_name, last_name, email, telephone, cpf, admin }) => {
-                                return (
-                                    <tr key={id}>
-                                        <td
-                                            onClick={() => copy(`${first_name} ${last_name}`)}
-                                        >{`${first_name} ${last_name}`}</td>
-                                        <td onClick={() => copy(email)}>{email}</td>
-                                        <td onClick={() => copy(telephone)}>
-                                            <a
-                                                href={`https://api.whatsapp.com/send/?phone=55${telephone}&text&app_absent=0`}
-                                                target='_blank'
-                                                rel='noreferrer noopener'
-                                            >
-                                                {telephone}
-                                            </a>
+        <S.TableContent>
+            <S.Table>
+                <thead>
+                    <tr>
+                        <th><div><PersonIcon /><p>Usuário</p></div></th>
+                        <th><div><EmailIcon /><p>E-mail</p></div></th>
+                        <th><div><PhoneIcon /><p>Telefone</p></div></th>
+                        <th><div><AssignmentIndIcon /><p>Cpf</p></div></th>
+                        <th><div><LockPersonIcon /><p>Admin</p></div></th>
+                        {isAdmin && <th><div><BuildIcon /><p>Ações</p></div></th>}
+                    </tr>
+                </thead>
+                <tbody>
+                    {collaborators?.map(
+                        ({ id, first_name, last_name, email, telephone, cpf, admin }) => {
+                            return (
+                                <tr key={id}>
+                                    <td
+                                        onClick={() => copy(`${first_name} ${last_name}`)}
+                                    >{`${first_name} ${last_name}`}</td>
+                                    <td onClick={() => copy(email)}>{email}</td>
+                                    <td onClick={() => copy(telephone)}>
+                                        <a
+                                            href={`https://api.whatsapp.com/send/?phone=55${telephone}&text&app_absent=0`}
+                                            target='_blank'
+                                            rel='noreferrer noopener'
+                                        >
+                                            {telephone}
+                                        </a>
+                                    </td>
+                                    <td onClick={() => copy(cpf)}>{cpf}</td>
+                                    <td>{admin ? 'Sim' : 'Não'}</td>
+                                    {isAdmin && (
+                                        <td>
+                                            <Actions
+                                                collaboratorData={{
+                                                    id,
+                                                    first_name,
+                                                    last_name,
+                                                    email,
+                                                    telephone,
+                                                    cpf,
+                                                    admin,
+                                                }}
+                                                successCallback={successCallback}
+                                            />
                                         </td>
-                                        <td onClick={() => copy(cpf)}>{cpf}</td>
-                                        <td>{admin ? 'Sim' : 'Não'}</td>
-                                        {isAdmin && (
-                                            <td>
-                                                <Actions
-                                                    collaboratorData={{
-                                                        id,
-                                                        first_name,
-                                                        last_name,
-                                                        email,
-                                                        telephone,
-                                                        cpf,
-                                                        admin,
-                                                    }}
-                                                    successCallback={successCallback}
-                                                />
-                                            </td>
-                                        )}
-                                    </tr>
-                                )
-                            }
-                        )}
-                    </tbody>
-                </S.Table>
-            </S.TableContent>
-        </>
+                                    )}
+                                </tr>
+                            )
+                        }
+                    )}
+                </tbody>
+            </S.Table>
+        </S.TableContent>
     )
 }
 export default ListUsers
