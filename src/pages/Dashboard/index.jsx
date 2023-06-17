@@ -44,7 +44,7 @@ const Dashboard = () => {
     <>
       <Header
         pageTitle='Dashboard'
-        pageDesc='Informações gerais sobre os processos e o sistema.'
+        pageDesc='Dados e informações sobre o sistema, usuários e processos.'
       >
         <DashboardIcon style={{ fontSize: '48px' }} />
       </Header>

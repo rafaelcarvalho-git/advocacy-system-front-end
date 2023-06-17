@@ -12,7 +12,7 @@ const NotFound = () => {
     <>
       <Header
         pageTitle='Página não encontrada'
-        pageDesc='A página que você procura não foi encontrada ou não existe, confira sua URL ou clique no botão para voltar.'
+        pageDesc='A página que você tentou acessar não existe ou não foi encontrada, verifique sua URL ou clique no botão para voltar.'
       >
         <WarningAmberIcon style={{ fontSize: '48px' }} />
       </Header>

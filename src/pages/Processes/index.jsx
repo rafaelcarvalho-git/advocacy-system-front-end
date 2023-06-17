@@ -13,7 +13,7 @@ const Processes = () => {
         <>
             <Header
                 pageTitle='Processos'
-                pageDesc='Lista com todos os processos ativos ou pendentes do sistema.'
+                pageDesc='Lista com todos os processos do sistema e suas informações.'
             >
                 <ArticleIcon style={{ fontSize: '48px' }} />
             </Header>
