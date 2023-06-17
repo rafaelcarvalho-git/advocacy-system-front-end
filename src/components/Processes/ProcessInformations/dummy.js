@@ -11,7 +11,7 @@ const formatDate = dateString => {
 export const findProcessItems = process => [
   {
     id: 1,
-    title: 'CTO',
+    title: 'Código Processo',
     text: process.CodCausa,
   },
   {
@@ -60,16 +60,6 @@ export const findProcessItems = process => [
     id: 10,
     title: 'Motivo do Status',
     text: process.MotivodoStatus,
-  },
-  {
-    id: 11,
-    title: 'Produto',
-    text: process.Produto,
-  },
-  {
-    id: 12,
-    title: 'Recurso',
-    text: process.Recurso,
   },
   {
     id: 13,
