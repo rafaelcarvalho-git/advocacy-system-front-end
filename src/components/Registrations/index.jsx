@@ -1,24 +1,25 @@
-import * as S from './styles'
+import { useState } from 'react'
 import ListOffices from './ListOffices'
 import ListUsers from './ListUsers'
 import ListLawyers from './ListLawyers'
-import { useState } from 'react'
 import RegistrationsMenu from './RegistrationsMenu'
 import RegistrationsOptions from './RegistrationsOptions'
 
-const ListRegistrations = ({ collaborators, successCallback }) => {
+const Registrations = ({ collaborators, successCallback }) => {
   const [menuOption, setMenuOption] = useState('users')
 
   return (
     <>
       <RegistrationsMenu menuOption={menuOption} setMenuOption={setMenuOption} />
 
+      <RegistrationsOptions userType={menuOption} />
+
       <>
-        {menuOption === 'users' && <ListUsers collaborators={collaborators} successCallback={successCallback} />}
-        {menuOption === 'lawyers' && <ListLawyers collaborators={collaborators} successCallback={successCallback} />}
-        {menuOption === 'offices' && <ListOffices collaborators={collaborators} successCallback={successCallback} />}
+        {menuOption === 'users' && <ListUsers collaborators={collaborators} successCallback={successCallback} userType={menuOption} />}
+        {menuOption === 'lawyers' && <ListLawyers collaborators={collaborators} successCallback={successCallback} userType={menuOption} />}
+        {menuOption === 'offices' && <ListOffices collaborators={collaborators} successCallback={successCallback} userType={menuOption} />}
       </>
     </>
   )
 }
-export default ListRegistrations
+export default Registrations
