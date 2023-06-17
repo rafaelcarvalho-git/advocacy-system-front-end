@@ -14,9 +14,9 @@ const UserProfile = ({ setLogout }) => {
     }
 
     const handleCloseUserMenu = () => {
-        setLogout(true)
         setAnchorElUser(null)
     }
+
 
     return (
         <div sx={{ flexGrow: 0 }}>
@@ -41,11 +41,14 @@ const UserProfile = ({ setLogout }) => {
                     vertical: 'top',
                     horizontal: 'right',
                 }}
-                open={anchorElUser}
+                open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
             >
 
-                <MenuItem onClick={() => handleCloseUserMenu()}>
+                <MenuItem onClick={() => {
+                    setLogout(true)
+                    handleCloseUserMenu()
+                }}>
                     <Typography textAlign='center'>Logout</Typography>
                     <ExitToAppIcon style={{ marginLeft: '5px' }} />
                 </MenuItem>
