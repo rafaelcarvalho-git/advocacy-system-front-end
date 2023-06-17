@@ -13,13 +13,11 @@ const ListRegistrations = ({ collaborators, successCallback }) => {
     <>
       <RegistrationsMenu menuOption={menuOption} setMenuOption={setMenuOption} />
 
-      <RegistrationsOptions placeholder={'a'} />
-
-      <S.TableContent>
+      <>
         {menuOption === 'users' && <ListUsers collaborators={collaborators} successCallback={successCallback} />}
         {menuOption === 'lawyers' && <ListLawyers collaborators={collaborators} successCallback={successCallback} />}
         {menuOption === 'offices' && <ListOffices collaborators={collaborators} successCallback={successCallback} />}
-      </S.TableContent>
+      </>
     </>
   )
 }

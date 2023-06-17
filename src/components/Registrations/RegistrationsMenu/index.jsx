@@ -41,7 +41,7 @@ const RegistrationsMenu = ({ menuOption, setMenuOption }) => {
     }
 
     return (
-        <Menu onClick={menuFunction} selectedKeys={[menuOption]} mode='horizontal' items={menuItems} style={{ justifyContent: ' center' }} />
+        <Menu onClick={menuFunction} selectedKeys={[menuOption]} mode='horizontal' items={menuItems} style={{ justifyContent: ' center', marginBottom: '28px' }} />
     )
 }
 
