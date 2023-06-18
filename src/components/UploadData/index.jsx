@@ -15,7 +15,7 @@ const UploadData = ({ open, setIsOpen }) => {
     const Upload = async () => {
         const data = new FormData()
         if (file) {
-            confirmLoading(true)
+            setConfirmLoading(true)
             setIncorrectUpload(false)
             data.append('file', file)
             createProcess(data)
@@ -33,7 +33,7 @@ const UploadData = ({ open, setIsOpen }) => {
                     )
                 })
                 .finally(() => {
-                    confirmLoading(false)
+                    setConfirmLoading(false)
                 })
         } else {
             setIncorrectUpload(true)
