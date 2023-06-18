@@ -57,8 +57,8 @@ const Navbar = ({ setLogout }) => {
                         >
                             {
                                 pages.map(({ item, icon, link }) => (
-                                    <NavLink to={link}>
-                                        <MenuItem key={item} onClick={() => handleCloseNavMenu()}>
+                                    <NavLink key={item} to={link}>
+                                        <MenuItem onClick={() => handleCloseNavMenu()}>
                                             <Typography textAlign='center' sx={{ color: ' black', display: 'flex', alignItems: 'center', gap: '5px' }}> {icon} {item}</Typography>
                                         </MenuItem>
                                     </NavLink >
@@ -69,9 +69,8 @@ const Navbar = ({ setLogout }) => {
 
                     <S.DesktopMenu sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map(({ item, icon, link }) => (
-                            <NavLink to={link} >
+                            <NavLink key={item} to={link} >
                                 <Button
-                                    key={item}
                                     onClick={() => handleCloseNavMenu()}
                                     sx={{ my: 2, color: 'white', display: 'flex', alignItems: 'center', gap: '5px' }}
                                 >
