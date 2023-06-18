@@ -1,19 +1,17 @@
-import useLogin from 'contexts/LoginContext'
-import { useNavigate } from 'react-router-dom'
+import * as S from './styles'
 import { useState } from 'react'
-import { Modal } from 'antd'
+import NewRegisterUser from './User'
+import NewRegisterLawyer from './Lawyer'
+import NewRegisterOffice from './Office'
 
 
-const NewRegister = ({ open, setIsOpen }) => {
-    const [confirmLoading, setConfirmLoading] = useState(false)
+const NewRegister = ({ open, setIsOpen, successCallback, userType, type }) => {
+    const [registerFunction, setRegisterFunction] = useState(null)
 
     const handleOk = () => {
-        setConfirmLoading(true)
-        setTimeout(() => {
-            setIsOpen(false)
-            setConfirmLoading(false)
-        }, 1200)
-
+        if (registerFunction) {
+            registerFunction()
+        }
     }
 
     const handleCancel = () => {
@@ -21,15 +19,18 @@ const NewRegister = ({ open, setIsOpen }) => {
     }
 
     return (
-        <Modal
-            title='Novo Cadastro'
+        <S.RegisterModal
+            title={`Cadastrar Novo ${type}`}
             open={open}
             onOk={handleOk}
-            confirmLoading={confirmLoading}
             onCancel={handleCancel}
+            width={600}
         >
-            <p style={{ margin: '24px auto 24px auto' }}>Deseja sair do sistema?</p>
-        </Modal>
+            {userType === 'users' && <NewRegisterUser successCallback={successCallback} setRegisterFunction={setRegisterFunction} />}
+            {userType === 'lawyers' && <NewRegisterLawyer successCallback={successCallback} setRegisterFunction={setRegisterFunction} />}
+            {userType === 'offices' && <NewRegisterOffice successCallback={successCallback} setRegisterFunction={setRegisterFunction} />}
+
+        </S.RegisterModal>
     )
 }
 
