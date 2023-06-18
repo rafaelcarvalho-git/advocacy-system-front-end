@@ -3,7 +3,7 @@ import { getAuthHeaders } from 'utils/requests'
 
 const findProcesses = async (
   paginate,
-  searchCTO,
+  searchCod,
   responsible,
   startDate,
   state,
@@ -19,8 +19,8 @@ const findProcesses = async (
     config.params.paginate = paginate
   }
 
-  if (searchCTO) {
-    config.params.CodCausa = searchCTO
+  if (searchCod) {
+    config.params.CodCausa = searchCod
   }
 
   if (responsible) {
