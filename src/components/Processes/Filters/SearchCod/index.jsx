@@ -1,19 +1,19 @@
 import * as S from './styles'
 import SearchIcon from '@mui/icons-material/Search'
 
-const Search = ({ setSearchCTO }) => {
+const Search = ({ setSearchCod }) => {
   return (
     <S.SearchBar>
-      <label htmlFor='searchCTO'>
-        <p>CTO</p>
+      <label htmlFor='searchCod'>
+        <p>Cód. Processo</p>
       </label>
       <S.Bar
-        id='searchCTO'
+        id='searchCod'
         size='large'
-        placeholder='CTO'
+        placeholder='Cód. Processo'
         suffix={<SearchIcon />}
         allowClear
-        onChange={e => setSearchCTO(e.target.value.toUpperCase())}
+        onChange={e => setSearchCod(e.target.value.toUpperCase())}
       />
     </S.SearchBar>
   )
