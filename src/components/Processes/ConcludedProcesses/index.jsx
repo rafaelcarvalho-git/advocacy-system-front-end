@@ -11,7 +11,7 @@ const ConcludedProcesses = () => {
   const [totalConcludedProcesses, setTotalConcludedProcesses] = useState()
   const [loading, setLoading] = useState(true)
   const [empty, setEmpty] = useState(false)
-  const [searchCTO, setSearchCTO] = useState()
+  const [searchCod, setSearchCod] = useState()
   const [state, setState] = useState()
   const [startDate, setStartDate] = useState(['', ''])
   const [responsible, setResponsible] = useState()
@@ -22,7 +22,7 @@ const ConcludedProcesses = () => {
     setLoading(true)
     findProcesses(
       paginate,
-      searchCTO,
+      searchCod,
       responsible,
       startDate,
       state,
@@ -38,7 +38,7 @@ const ConcludedProcesses = () => {
         console.log(error)
         message.error('Algo deu errado! Recarregue a página e tente novamente.')
       })
-  }, [paginate, searchCTO, responsible, startDate, state])
+  }, [paginate, searchCod, responsible, startDate, state])
 
   useEffect(() => {
     fetchProcesses()
@@ -48,7 +48,7 @@ const ConcludedProcesses = () => {
     <>
       <Filters
         isConcluded={true}
-        setSearchCTO={setSearchCTO}
+        setSearchCod={setSearchCod}
         setStartDate={setStartDate}
         setState={setState}
         setResponsible={setResponsible}

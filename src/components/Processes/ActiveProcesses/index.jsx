@@ -12,7 +12,7 @@ const ActiveProcesses = () => {
   const [totalActiveProcesses, setTotalActiveProcesses] = useState()
   const [loading, setLoading] = useState(true)
   const [empty, setEmpty] = useState(false)
-  const [searchCTO, setSearchCTO] = useState()
+  const [searchCod, setSearchCod] = useState()
   const [expireDate, setExpireDate] = useState()
   const [state, setState] = useState()
   const [processStatus, setProcessStatus] = useState()
@@ -24,7 +24,7 @@ const ActiveProcesses = () => {
     setLoading(true)
     findProcesses(
       paginate,
-      searchCTO,
+      searchCod,
       responsible,
       startDate,
       state,
@@ -45,7 +45,7 @@ const ActiveProcesses = () => {
       })
   }, [
     paginate,
-    searchCTO,
+    searchCod,
     responsible,
     startDate,
     state,
@@ -61,7 +61,7 @@ const ActiveProcesses = () => {
     <>
       <Filters
         isActive={true}
-        setSearchCTO={setSearchCTO}
+        setSearchCod={setSearchCod}
         setExpireDate={setExpireDate}
         setState={setState}
         setProcessStatus={setProcessStatus}
