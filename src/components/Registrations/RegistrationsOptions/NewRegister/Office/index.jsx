@@ -1,7 +1,7 @@
 import * as S from '../styles'
 import { useEffect, useState } from 'react'
 import { Input, message } from 'antd'
-import createCollaborator from 'services/collaborator/createCollaborator'
+import newCollaborator from 'services/collaborator/newCollaborator'
 import validateCollaborator from 'services/collaborator/validateCollaborator'
 
 const NewRegisterOffice = ({ setIsOpen, successCallback, setRegisterFunction }) => {
@@ -23,7 +23,7 @@ const NewRegisterOffice = ({ setIsOpen, successCallback, setRegisterFunction }) 
             officeCreate.address !== ''
         if (isNotEmpty) {
             validateCollaborator()
-            createCollaborator(officeCreate)
+            newCollaborator(officeCreate)
                 .then(response => {
                     successCallback()
                     message.success(
