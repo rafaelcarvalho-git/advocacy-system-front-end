@@ -2,7 +2,7 @@ import * as S from './styles'
 import { useState } from 'react'
 import logo from 'assets/images/logo.png'
 import { Input, message } from 'antd'
-import createCollaborator from 'services/collaborator/createCollaborator'
+import newCollaborator from 'services/collaborator/newCollaborator'
 import ReactLoading from 'react-loading'
 import { useNavigate } from 'react-router-dom'
 
@@ -34,7 +34,7 @@ const NewUserForm = () => {
       confirmPassword !== ''
     if (isNotEmpty) {
       setLoading(true)
-      createCollaborator(userCreate)
+      newCollaborator(userCreate)
         .then(response => {
           message.success(
             'Usuário cadastrado com sucesso! Faça login para entrar no sistema.'
