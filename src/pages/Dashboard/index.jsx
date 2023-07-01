@@ -1,21 +1,23 @@
 import * as S from './styles'
 import { useState, useEffect, useCallback } from 'react'
 import Header from 'components/Container/Header'
-import { Button, Statistic, message } from 'antd'
-import CountUp from 'react-countup'
+import { Row, message } from 'antd'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
-import PersonIcon from '@mui/icons-material/Person'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import Loader from 'components/Loader'
 import dashboard from 'services/dashboard/dashboard'
 import listCollaborators from 'services/collaborator/listCollaborators'
-import UploadData from 'components/UploadData'
+import Datacard from 'components/Dashboard/Datacard'
+import RegistrationsCard from 'components/Dashboard/RegistrationsCard'
+import UploadDataCard from 'components/Dashboard/UploadDataCard'
+import TaskIcon from '@mui/icons-material/Task'
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile'
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted'
+
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true)
   const [dashboardData, setDashboardData] = useState({})
-
-  const [showUpload, setShowUpload] = useState(false);
 
   const fetchDashboard = useCallback(() => {
     setLoading(true)
@@ -40,6 +42,28 @@ const Dashboard = () => {
     fetchDashboard()
   }, [fetchDashboard])
 
+  const dados = [{
+    title: 'Total Processos',
+    value: dashboardData.count,
+    icon: <FormatListBulletedIcon style={{ fontSize: '76px' }} />,
+    link: '/cadastros'
+  }, {
+    title: 'Processos Ativos',
+    value: dashboardData.activeProcesses,
+    icon: <InsertDriveFileIcon style={{ fontSize: '76px' }} />,
+    link: '/cadastros'
+  }, {
+    title: 'Processos Concluidos',
+    value: dashboardData.concludedProcesses,
+    icon: <TaskIcon style={{ fontSize: '76px' }} />,
+    link: '/cadastros'
+  }, {
+    title: 'Vencimento Próximo',
+    value: dashboardData.nextDueDate,
+    icon: <CalendarMonthIcon style={{ fontSize: '76px' }} />,
+    link: '/cadastros'
+  }]
+
   return (
     <>
       <Header
@@ -49,115 +73,26 @@ const Dashboard = () => {
         <DashboardIcon style={{ fontSize: '48px' }} />
       </Header>
 
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <S.CardGroup>
+      {
+        loading ? (
+          <Loader />
+        ) : (
+          <>
+            <Row gutter={24} style={{ marginBottom: '32px' }}>
+              {
+                dados.map(({ title, value, icon, link }) => {
+                  return <Datacard title={title} value={value} icon={icon} link={link} />
+                })
+              }
+            </Row>
 
-            <S.DataCard>
-              <S.CardInfo>
-
-                <h4>Atualizar Processos</h4>
-
-                <p>Processos Ativos</p>
-              </S.CardInfo>
-              <S.CardIcon>
-                <PersonIcon />
-              </S.CardIcon>
-              <UploadData open={showUpload} setIsOpen={setShowUpload} />
-              <Button type='primary' onClick={() => setShowUpload(true)}>asdasd</Button>
-            </S.DataCard>
-
-            <S.DataCard>
-              <S.CardInfo>
-                <Statistic
-                  value={dashboardData.activeProcesses}
-                  formatter={value => (
-                    <h2>
-                      <CountUp end={value} />
-                    </h2>
-                  )}
-                />
-                <p>Processos Ativos</p>
-              </S.CardInfo>
-              <S.CardIcon>
-                <PersonIcon />
-              </S.CardIcon>
-            </S.DataCard>
-
-            <S.DataCard>
-              <S.CardInfo>
-                <Statistic
-                  value={dashboardData.concludedProcesses}
-                  formatter={value => (
-                    <h2>
-                      <CountUp end={value} />
-                    </h2>
-                  )}
-                />
-                <p>Processos Concluidos</p>
-              </S.CardInfo>
-              <S.CardIcon>
-                <PersonIcon />
-              </S.CardIcon>
-            </S.DataCard>
-
-            <S.DataCard>
-              <S.CardInfo>
-                <Statistic
-                  value={dashboardData.expiredDate}
-                  formatter={value => (
-                    <h2>
-                      <CountUp end={value} />
-                    </h2>
-                  )}
-                />
-                <p>Processos Vencidos</p>
-              </S.CardInfo>
-              <S.CardIcon>
-                <PersonIcon />
-              </S.CardIcon>
-            </S.DataCard>
-
-            <S.DataCard>
-              <S.CardInfo>
-                <Statistic
-                  value={dashboardData.nextDueDate}
-                  formatter={value => (
-                    <h2>
-                      <CountUp end={value} />
-                    </h2>
-                  )}
-                />
-                <p>Vencimento Próximo</p>
-              </S.CardInfo>
-              <S.CardIcon>
-                <CalendarMonthIcon />
-              </S.CardIcon>
-            </S.DataCard>
-          </S.CardGroup>
-
-          <S.CardGroup>
-            <S.DataCard>
-              <S.CardInfo>
-                <Statistic
-                  value={dashboardData.totalCollaborators}
-                  formatter={value => (
-                    <h2>
-                      <CountUp end={value} />
-                    </h2>
-                  )}
-                />
-                <p>Usuarios Cadastrados</p>
-              </S.CardInfo>
-              <S.CardIcon>
-                <PersonIcon />
-              </S.CardIcon>
-            </S.DataCard>
-          </S.CardGroup>
-        </>
-      )}
+            <Row gutter={24} style={{ marginBottom: '32px' }}>
+              <UploadDataCard />
+              <RegistrationsCard totalCollaborators={'1'} />
+            </Row>
+          </>
+        )
+      }
     </>
   )
 }
