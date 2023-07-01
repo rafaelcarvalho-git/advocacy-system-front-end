@@ -1,29 +1,37 @@
 import * as S from './styles'
-import SearchCTO from './SearchCTO'
+import SearchCod from './SearchCod'
 import ExpireDate from './ExpireDate'
 import DtStartCause from './DtStartCause'
 import Collaborator from './Collaborator'
 import State from './State'
 import Status from './Status'
+import { Checkbox } from 'antd'
+import ShowFilters from './ShowFilters'
 
 const Filters = ({
   isActive,
-  setSearchCTO,
+  setSearchCod,
   setExpireDate,
   setState,
   setProcessStatus,
   setStartDate,
   setResponsible,
 }) => {
+
+
+
   return (
-    <S.Filtering>
-      <SearchCTO setSearchCTO={setSearchCTO} />
-      {isActive && <ExpireDate setExpireDate={setExpireDate} />}
-      <State setState={setState} />
-      {isActive && <Status setProcessStatus={setProcessStatus} />}
-      <Collaborator setResponsible={setResponsible} />
-      <DtStartCause setStartDate={setStartDate} />
-    </S.Filtering>
+    <>
+      {/*<ShowFilters />*/}
+      <S.Filtering>
+        <SearchCod setSearchCod={setSearchCod} />
+        {isActive && <ExpireDate setExpireDate={setExpireDate} />}
+        <State setState={setState} />
+        {isActive && <Status setProcessStatus={setProcessStatus} />}
+        <Collaborator setResponsible={setResponsible} />
+        <DtStartCause setStartDate={setStartDate} />
+      </S.Filtering>
+    </>
   )
 }
 
