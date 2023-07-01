@@ -78,15 +78,15 @@ const Dashboard = () => {
           <Loader />
         ) : (
           <>
-            <Row gutter={24} style={{ marginBottom: '32px' }}>
+            <Row gutter={24}>
               {
                 dados.map(({ title, value, icon, link }) => {
-                  return <Datacard title={title} value={value} icon={icon} link={link} />
+                  return <Datacard key={title} title={title} value={value} icon={icon} link={link} />
                 })
               }
             </Row>
 
-            <Row gutter={24} style={{ marginBottom: '32px' }}>
+            <Row gutter={24}>
               <UploadDataCard />
               <RegistrationsCard totalCollaborators={'1'} />
             </Row>
