@@ -10,7 +10,7 @@ const UploadDataCard = () => {
     const [showUpload, setShowUpload] = useState(false)
 
     return (
-        <Col xs={16} sm={16} md={8} lg={12} xl={12}>
+        <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <S.Card>
                 <S.CardContent>
                     <S.CardTitle>Atualizar Processos</S.CardTitle>

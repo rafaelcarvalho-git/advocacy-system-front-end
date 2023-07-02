@@ -18,7 +18,7 @@ export const CardContent = styled.div`
 `
 
 export const CardText = styled.p`
-  margin: 12px auto 12px auto;
+  margin: 12.5px auto 12.5px auto;
 `
 
 export const CardIcon = styled.div`
