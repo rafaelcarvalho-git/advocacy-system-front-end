@@ -59,6 +59,7 @@ const LoginForm = () => {
           href='https://github.com/rafaelcarvalho-git/advocacy-system-front-end'
           target='_blank'
           rel='noopener noreferrer'
+          loading='lazy'
         >
           <img src={logo} alt='advocacy-system' />
         </a>
