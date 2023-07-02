@@ -45,23 +45,27 @@ const Dashboard = () => {
   const dados = [{
     title: 'Total Processos',
     value: dashboardData.count,
-    icon: <FormatListBulletedIcon style={{ fontSize: '76px' }} />,
-    link: '/cadastros'
+    icon: <FormatListBulletedIcon />,
+    link: '/processos',
+    tooltip: 'Qntd. total de processos do mês'
   }, {
     title: 'Processos Ativos',
     value: dashboardData.activeProcesses,
-    icon: <InsertDriveFileIcon style={{ fontSize: '76px' }} />,
-    link: '/cadastros'
+    icon: <InsertDriveFileIcon />,
+    link: '/processos',
+    tooltip: 'Total de processos ativos do mês'
   }, {
     title: 'Processos Concluidos',
     value: dashboardData.concludedProcesses,
-    icon: <TaskIcon style={{ fontSize: '76px' }} />,
-    link: '/cadastros'
+    icon: <TaskIcon />,
+    link: '/processos',
+    tooltip: 'Total de processos concluídos do mês'
   }, {
     title: 'Vencimento Próximo',
     value: dashboardData.nextDueDate,
-    icon: <CalendarMonthIcon style={{ fontSize: '76px' }} />,
-    link: '/cadastros'
+    icon: <CalendarMonthIcon />,
+    link: '/processos',
+    tooltip: 'Total de processos próximos ao seu vencimento'
   }]
 
   return (
@@ -80,8 +84,8 @@ const Dashboard = () => {
           <>
             <Row gutter={24}>
               {
-                dados.map(({ title, value, icon, link }) => {
-                  return <Datacard key={title} title={title} value={value} icon={icon} link={link} />
+                dados.map(({ title, value, icon, link, tooltip }) => {
+                  return <Datacard key={title} title={title} value={value} icon={icon} link={link} tooltip={tooltip} />
                 })
               }
             </Row>
