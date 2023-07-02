@@ -1,16 +1,14 @@
 import * as S from './styles'
-import { useState, useEffect, useCallback } from 'react'
 import { Col, Statistic } from 'antd'
 import CountUp from 'react-countup'
 import PersonIcon from '@mui/icons-material/Person'
 import BalanceIcon from '@mui/icons-material/Balance'
 import ApartmentIcon from '@mui/icons-material/Apartment'
-import AddIcon from '@mui/icons-material/Add'
 
 
 const RegistrationsCard = ({ totalCollaborators }) => {
     return (
-        <Col xs={16} sm={16} md={8} lg={12} xl={12}>
+        <Col xs={24} sm={24} md={24} lg={12} xl={12} style={{ margin: 'auto' }}>
             <S.Card>
                 <S.CardTitle>Cadastros</S.CardTitle>
                 <S.CardText>Total de cadastros do sistema</S.CardText>
@@ -29,7 +27,7 @@ const RegistrationsCard = ({ totalCollaborators }) => {
                         />
                     </S.CardRegistrations>
                     <S.CardRegistrations>
-                        <BalanceIcon />
+                        <BalanceIcon style={{ fontSize: '32px' }} />
                         <p>Advogados</p>
                         <Statistic
                             style={{ marginLeft: 'auto' }}
@@ -42,7 +40,7 @@ const RegistrationsCard = ({ totalCollaborators }) => {
                         />
                     </S.CardRegistrations>
                     <S.CardRegistrations>
-                        <ApartmentIcon />
+                        <ApartmentIcon style={{ fontSize: '32px' }} />
                         <p>Escritórios</p>
                         <Statistic
                             style={{ marginLeft: 'auto' }}

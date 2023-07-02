@@ -5,7 +5,7 @@ import CountUp from 'react-countup'
 
 const Datacard = ({ title, value, icon, link }) => {
     return (
-        <Col xs={20} sm={12} md={12} lg={12} xl={6}>
+        <Col xs={24} sm={12} md={12} lg={12} xl={6}>
             <S.Card>
                 <S.CardContent>
                     <S.CardTitle>{title}</S.CardTitle>

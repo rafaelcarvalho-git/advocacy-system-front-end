@@ -11,20 +11,20 @@ export const Card = styled.div`
   padding: 16px;
   border: 0.5px solid #474747;
   text-align: left;
-  margin-bottom: 32px;
 `
 
 export const CardTitle = styled.h4``
 
 export const CardContent = styled.div`
   text-align: left;
+  margin-top: 10px;
 `
 
 export const CardRegistrations = styled.div`
   display: flex;
   align-items: end;
   gap: 5px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 `
 
 export const CardText = styled.p`

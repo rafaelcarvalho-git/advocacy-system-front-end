@@ -11,7 +11,7 @@ const UploadDataCard = () => {
 
     return (
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <S.Card>
+            <S.Card style={{}}>
                 <S.CardContent>
                     <S.CardTitle>Atualizar Processos</S.CardTitle>
                     <S.CardText>Suba a planilha com os processos atualizados</S.CardText>
@@ -20,7 +20,7 @@ const UploadDataCard = () => {
                 </S.CardContent>
                 <S.CardIcon><UploadFileIcon style={{ fontSize: '76px' }} /></S.CardIcon>
             </S.Card>
-            <S.Card style={{ marginTop: '26px' }}>
+            <S.Card style={{ marginTop: '38px' }}>
                 <S.CardContent>
                     <S.CardTitle>Ultima Atualização</S.CardTitle>
                     <S.CardText>Data e hora da ultima atualização de processos</S.CardText>

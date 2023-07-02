@@ -7,7 +7,6 @@ export const Card = styled.div`
   background: white;
   padding: 16px;
   border: 0.5px solid #474747;
-  margin-bottom: 32px;
 `
 
 export const CardTitle = styled.h4``
