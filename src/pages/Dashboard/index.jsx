@@ -1,4 +1,3 @@
-import * as S from './styles'
 import { useState, useEffect, useCallback } from 'react'
 import Header from 'components/Container/Header'
 import { Row, message } from 'antd'
@@ -88,7 +87,7 @@ const Dashboard = () => {
 
             <Row gutter={24}>
               <UploadDataCard />
-              <RegistrationsCard totalCollaborators={'1'} />
+              <RegistrationsCard totalCollaborators={dashboardData.totalCollaborators} />
             </Row>
           </>
         )
