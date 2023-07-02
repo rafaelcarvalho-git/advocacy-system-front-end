@@ -8,6 +8,6 @@ const App = () => {
       <Router />
     </LoginContextProvider>
   )
-}
+}/**/
 
 export default App
