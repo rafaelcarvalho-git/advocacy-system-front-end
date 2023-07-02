@@ -1,17 +1,18 @@
 import { useState, useEffect, useCallback } from 'react'
-import Header from 'components/Container/Header'
 import { Row, message } from 'antd'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import DashboardIcon from '@mui/icons-material/Dashboard'
-import Loader from 'components/Loader'
-import dashboard from 'services/dashboard/dashboard'
-import listCollaborators from 'services/collaborator/listCollaborators'
-import Datacard from 'components/Dashboard/Datacard'
-import RegistrationsCard from 'components/Dashboard/RegistrationsCard'
-import UploadDataCard from 'components/Dashboard/UploadDataCard'
 import TaskIcon from '@mui/icons-material/Task'
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile'
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted'
+import dashboard from 'services/dashboard/dashboard'
+import listCollaborators from 'services/collaborator/listCollaborators'
+import Header from 'components/Container/Header'
+import Loader from 'components/Loader'
+import Datacard from 'components/Dashboard/Datacard'
+import RegistrationsCard from 'components/Dashboard/RegistrationsCard'
+import UploadDataCard from 'components/Dashboard/UploadDataCard'
+import DueDate from 'components/Dashboard/Expired'
 
 
 const Dashboard = () => {
@@ -87,6 +88,7 @@ const Dashboard = () => {
 
             <Row gutter={24}>
               <UploadDataCard />
+              <DueDate expiredDate={dashboardData.expiredDate} />
               <RegistrationsCard totalCollaborators={dashboardData.totalCollaborators} />
             </Row>
           </>
