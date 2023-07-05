@@ -13,6 +13,80 @@ import RegistrationsOptions from '../RegistrationsOptions'
 const ListLawyers = ({ collaborators, successCallback }) => {
     const userData = getUserCachedData()
     const isAdmin = userData.admin
+    const lawyers = [
+        {
+            "id": 1,
+            "lawyer_name": "João Guilherme da Silva",
+            "telephone": "(85) 988123456",
+            "email": "joaogui@gmail.com",
+            "office": "JG Advocacia"
+        },
+        {
+            "id": 2,
+            "lawyer_name": "Carolina Oliveira Santos",
+            "telephone": "(11) 987654321",
+            "email": "carolosantos@advogados.com",
+            "office": "Santos & Associados"
+        },
+        {
+            "id": 3,
+            "lawyer_name": "Marcelo Almeida Barros",
+            "telephone": "(21) 999887766",
+            "email": "marcelob@barrosadvogados.com",
+            "office": "Barros Advogados"
+        },
+        {
+            "id": 4,
+            "lawyer_name": "Isabela Nunes Ferreira",
+            "telephone": "(31) 988776655",
+            "email": "isabelaferreira@lawfirm.com",
+            "office": "Ferreira & Advogados Associados"
+        },
+        {
+            "id": 5,
+            "lawyer_name": "Ricardo Mendes Carvalho",
+            "telephone": "(41) 999665544",
+            "email": "ricardo.carvalho@adv.com.br",
+            "office": "Carvalho e Lima Advocacia"
+        },
+        {
+            "id": 6,
+            "lawyer_name": "Camila Lima Souza",
+            "telephone": "(61) 988887777",
+            "email": "camilalima@lawyersoffice.com",
+            "office": "Souza Advocacia"
+        },
+        {
+            "id": 7,
+            "lawyer_name": "Eduardo Santos Costa",
+            "telephone": "(31) 987776655",
+            "email": "eduardocosta@escritoriocosta.com",
+            "office": "Costa & Associados Advogados"
+        },
+        {
+            "id": 8,
+            "lawyer_name": "Amanda Ferreira Gomes",
+            "telephone": "(81) 988887766",
+            "email": "amandagomes@advogadosgomes.com",
+            "office": "Gomes e Silva Advocacia"
+        },
+        {
+            "id": 9,
+            "lawyer_name": "Pedro Henrique Castro",
+            "telephone": "(31) 987887766",
+            "email": "phcastro@castroadvogados.com.br",
+            "office": "Castro e Castro Advogados"
+        },
+        {
+            "id": 10,
+            "lawyer_name": "Mariana Oliveira Lima",
+            "telephone": "(21) 988885544",
+            "email": "marianalima@advocacialima.com",
+            "office": "Lima & Oliveira Advogados Associados"
+        }
+    ];
+
+
 
     return (
         <S.TableContent>
@@ -27,15 +101,15 @@ const ListLawyers = ({ collaborators, successCallback }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {collaborators?.map(
-                        ({ id, first_name, last_name, email, telephone, cpf }) => {
+                    {lawyers?.map(
+                        ({ id, lawyer_name, telephone, email, office }) => {
                             return (
                                 <tr key={id}>
                                     <td
-                                        onClick={() => copy(`${first_name} ${last_name}`)}
-                                    >{`${first_name} ${last_name}`}</td>
-                                    <td onClick={() => copy(email)}>{email}</td>
-                                    <td onClick={() => copy(telephone)}>
+                                        onClick={() => copy(`${lawyer_name}`)}
+                                    >{`${lawyer_name}`}</td>
+                                    <td onClick={() => copy(office)}>{office}</td>
+                                    <td onClick={() => copy(telephone)} style={{ minWidth: '180px' }}>
                                         <a
                                             href={`https://api.whatsapp.com/send/?phone=55${telephone}&text&app_absent=0`}
                                             target='_blank'
@@ -44,17 +118,17 @@ const ListLawyers = ({ collaborators, successCallback }) => {
                                             {telephone}
                                         </a>
                                     </td>
-                                    <td onClick={() => copy(cpf)}>{cpf}</td>
+                                    <td onClick={() => copy(email)}>{email}</td>
                                     {isAdmin && (
                                         <td>
                                             <Actions
                                                 collaboratorData={{
                                                     id,
-                                                    first_name,
-                                                    last_name,
+                                                    /*first_name,
+                                                    last_name,*/
                                                     email,
                                                     telephone,
-                                                    cpf,
+                                                    office,
                                                 }}
                                                 successCallback={successCallback}
                                             />
