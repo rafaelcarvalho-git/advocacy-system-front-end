@@ -7,7 +7,7 @@ export const Actions = styled.div`
   gap: 10px;
   align-items: center;
   margin-left: auto;
-  max-width: 280px;
+  max-width: 320px;
 
   & > * {
     display: flex;

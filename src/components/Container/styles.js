@@ -30,7 +30,7 @@ export const Container = styled.div`
 export const Footer = styled.p`
   text-align: center;
   margin-bottom: 8px;
-  margin-top: 24px;
+  margin-top: 32px;
 
   @media (max-width: 361px) {
     font-size: 14px;
