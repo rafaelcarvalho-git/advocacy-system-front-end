@@ -112,7 +112,7 @@ const NewRegisterOffice = ({ setIsOpen, successCallback, setRegisterFunction }) 
             <S.RegisterInputGroup>
                 <S.RegisterInput>
                     <label htmlFor='address'>
-                        <h4>Localidade</h4>
+                        <h4>Endereço</h4>
                     </label>
                     <Input
                         type='text'
