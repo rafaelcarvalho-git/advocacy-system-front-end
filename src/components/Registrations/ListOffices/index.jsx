@@ -110,7 +110,6 @@ const ListOffices = ({ offices, successCallback }) => {
                                                     first_name,
                                                     telephone,
                                                     email,
-                                                    telephone,
                                                     last_name,
                                                 }}
                                                 successCallback={successCallback}

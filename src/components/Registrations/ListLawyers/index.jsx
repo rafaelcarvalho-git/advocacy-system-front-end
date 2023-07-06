@@ -7,7 +7,6 @@ import EmailIcon from '@mui/icons-material/Email'
 import BuildIcon from '@mui/icons-material/Build'
 import PersonIcon from '@mui/icons-material/Person'
 import ApartmentIcon from '@mui/icons-material/Apartment'
-import RegistrationsOptions from '../RegistrationsOptions'
 
 
 const ListLawyers = ({ lawyers, successCallback }) => {
