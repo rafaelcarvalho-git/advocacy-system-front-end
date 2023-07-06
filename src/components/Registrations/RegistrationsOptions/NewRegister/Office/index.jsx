@@ -1,33 +1,50 @@
 import * as S from '../styles'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Input, message } from 'antd'
 import newCollaborator from 'services/collaborator/newCollaborator'
 import validateCollaborator from 'services/collaborator/validateCollaborator'
 
-const NewRegisterOffice = ({ setIsOpen, successCallback, setRegisterFunction }) => {
-    const [officeCreate, setOfficeCreate] = useState({
-        office_name: '',
-        telephone: '',
+const NewRegisterOffice = ({ open, setIsOpen, successCallback }) => {
+    const [officeForm, setOfficeForm] = useState({
+        first_name: '',
+        last_name: '',
         email: '',
-        address: '',
+        telephone: '',
+        cpf: randomCpf(10),
+        password: 'aljhflakfhapfiahfçois',
+        passwordResetToken: 'Office',
+        admin: false,
     })
     const [incorrectInfo, setIncorrectInfo] = useState(false)
     const [incorrectPhrase, setIncorrectPhrase] = useState('')
 
+    function randomCpf(length) {
+        let result = '';
+        const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
+        const tamanhoCaracteres = caracteres.length;
+
+        for (let i = 0; i < length; i++) {
+            const indiceAleatorio = Math.floor(Math.random() * tamanhoCaracteres);
+            result += caracteres.charAt(indiceAleatorio);
+        }
+
+        return result;
+    }
+
     const NewOffice = () => {
-        alert('office')
-        /*const isNotEmpty =
-            officeCreate.office_name !== '' &&
-            officeCreate.telephone !== '' &&
-            officeCreate.email !== '' &&
-            officeCreate.address !== ''
+        const isNotEmpty =
+            officeForm.first_name !== '' &&
+            officeForm.last_name !== '' &&
+            officeForm.email !== '' &&
+            officeForm.password !== '' &&
+            officeForm.telephone !== ''
         if (isNotEmpty) {
             validateCollaborator()
-            newCollaborator(officeCreate)
+            newCollaborator(officeForm)
                 .then(response => {
                     successCallback()
                     message.success(
-                        'Usuário cadastrado com sucesso! Faça login para entrar no sistema.'
+                        'Advogado parceiro cadastrado com sucesso!'
                     )
                     setIsOpen(false)
                 })
@@ -47,87 +64,95 @@ const NewRegisterOffice = ({ setIsOpen, successCallback, setRegisterFunction }) 
         } else {
             setIncorrectInfo(true)
             setIncorrectPhrase('Não podem haver campos vazios.')
-        }*/
+        }
     }
 
-    useEffect(() => {
-        setRegisterFunction(() => {
-            return () => {
-                NewOffice()
-            }
-        })
-    }, [setRegisterFunction])
+    const handleOk = () => {
+        NewOffice()
+    }
+
+    const handleCancel = () => {
+        setIsOpen(false)
+    }
 
     return (
-        <S.RegisterForm>
-            <S.RegisterInputGroup>
-                <S.RegisterInput>
-                    <label htmlFor='office_name'>
-                        <h4>Nome Escritório</h4>
+        <S.RegisterModal
+            title={`Cadastrar Novo Advogado`}
+            open={open}
+            onOk={handleOk}
+            onCancel={handleCancel}
+            width={600}
+        >
+            <S.RegisterForm>
+                <S.RegisterInputGroup>
+                    <S.RegisterInput>
+                        <label htmlFor='office_name'>
+                            <h4>Nome Escritório</h4>
+                        </label>
+                        <Input
+                            type='text'
+                            size='large'
+                            onChange={e =>
+                                setOfficeForm(prev => ({ ...prev, first_name: e.target.value }))
+                            }
+                            onClick={() => setIncorrectInfo(false)}
+                            id='office_name'
+                        />
+                    </S.RegisterInput>
+                </S.RegisterInputGroup>
+
+                <S.RegisterInputGroup>
+                    <S.RegisterInput>
+                        <label htmlFor='office_telephone'>
+                            <h4>Telefone</h4>
+                        </label>
+                        <Input
+                            size='large'
+                            onChange={e =>
+                                setOfficeForm(prev => ({ ...prev, telephone: e.target.value }))
+                            }
+                            onClick={() => setIncorrectInfo(false)}
+                            id='office_telephone'
+                        />
+                    </S.RegisterInput>
+                </S.RegisterInputGroup>
+
+                <S.RegisterInputGroup>
+                    <label htmlFor='office_email'>
+                        <h4>E-mail</h4>
                     </label>
                     <Input
-                        type='text'
+                        id='office_email'
                         size='large'
+                        type='email'
                         onChange={e =>
-                            setOfficeCreate(prev => ({ ...prev, office_name: e.target.value }))
+                            setOfficeForm(prev => ({ ...prev, email: e.target.value }))
                         }
                         onClick={() => setIncorrectInfo(false)}
-                        id='office_name'
+                        placeholder='escritorio@gmail.com'
                     />
-                </S.RegisterInput>
-            </S.RegisterInputGroup>
+                </S.RegisterInputGroup>
 
-            <S.RegisterInputGroup>
-                <S.RegisterInput>
-                    <label htmlFor='office_telephone'>
-                        <h4>Telefone</h4>
-                    </label>
-                    <Input
-                        size='large'
-                        onChange={e =>
-                            setOfficeCreate(prev => ({ ...prev, telephone: e.target.value }))
-                        }
-                        onClick={() => setIncorrectInfo(false)}
-                        id='office_telephone'
-                    />
-                </S.RegisterInput>
-            </S.RegisterInputGroup>
+                <S.RegisterInputGroup>
+                    <S.RegisterInput>
+                        <label htmlFor='address'>
+                            <h4>Endereço</h4>
+                        </label>
+                        <Input
+                            type='text'
+                            size='large'
+                            onChange={e =>
+                                setOfficeForm(prev => ({ ...prev, last_name: e.target.value }))
+                            }
+                            onClick={() => setIncorrectInfo(false)}
+                            id='address'
+                        />
+                    </S.RegisterInput>
+                </S.RegisterInputGroup>
 
-            <S.RegisterInputGroup>
-                <label htmlFor='office_email'>
-                    <h4>E-mail</h4>
-                </label>
-                <Input
-                    id='office_email'
-                    size='large'
-                    type='email'
-                    onChange={e =>
-                        setOfficeCreate(prev => ({ ...prev, email: e.target.value }))
-                    }
-                    onClick={() => setIncorrectInfo(false)}
-                    placeholder='escritorio@gmail.com'
-                />
-            </S.RegisterInputGroup>
-
-            <S.RegisterInputGroup>
-                <S.RegisterInput>
-                    <label htmlFor='address'>
-                        <h4>Endereço</h4>
-                    </label>
-                    <Input
-                        type='text'
-                        size='large'
-                        onChange={e =>
-                            setOfficeCreate(prev => ({ ...prev, address: e.target.value }))
-                        }
-                        onClick={() => setIncorrectInfo(false)}
-                        id='address'
-                    />
-                </S.RegisterInput>
-            </S.RegisterInputGroup>
-
-            {incorrectInfo && <S.RegisterError>{incorrectPhrase}</S.RegisterError>}
-        </S.RegisterForm>
+                {incorrectInfo && <S.RegisterError>{incorrectPhrase}</S.RegisterError>}
+            </S.RegisterForm>
+        </S.RegisterModal>
     )
 }
 
