@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { isAdmin } from 'utils/permissions'
 
 
-const RegistrationsOptions = ({ setSearch, userType }) => {
+const RegistrationsOptions = ({ setSearch, userType, successCallback }) => {
     const [showRegister, setShowRegister] = useState(false)
     const [type, setType] = useState(userType)
 
@@ -33,7 +33,7 @@ const RegistrationsOptions = ({ setSearch, userType }) => {
             </S.SearchBar>
             {isAdmin && <>
                 <Button type='primary' onClick={() => setShowRegister(true)}>Novo {type}</Button>
-                <NewRegister open={showRegister} setIsOpen={setShowRegister} userType={userType} type={type} />
+                <NewRegister open={showRegister} setIsOpen={setShowRegister} successCallback={successCallback} userType={userType} type={type} />
             </>}
         </S.Options>
     )
