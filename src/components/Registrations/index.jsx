@@ -5,7 +5,7 @@ import ListLawyers from './ListLawyers'
 import RegistrationsMenu from './RegistrationsMenu'
 import RegistrationsOptions from './RegistrationsOptions'
 
-const Registrations = ({ collaborators, successCallback }) => {
+const Registrations = ({ collaborators, lawyers, offices, successCallback }) => {
   const [menuOption, setMenuOption] = useState('users')
 
   return (
@@ -16,8 +16,8 @@ const Registrations = ({ collaborators, successCallback }) => {
 
       <>
         {menuOption === 'users' && <ListUsers collaborators={collaborators} successCallback={successCallback} userType={menuOption} />}
-        {menuOption === 'lawyers' && <ListLawyers collaborators={collaborators} successCallback={successCallback} userType={menuOption} />}
-        {menuOption === 'offices' && <ListOffices collaborators={collaborators} successCallback={successCallback} userType={menuOption} />}
+        {menuOption === 'lawyers' && <ListLawyers lawyers={lawyers} successCallback={successCallback} userType={menuOption} />}
+        {menuOption === 'offices' && <ListOffices offices={offices} successCallback={successCallback} userType={menuOption} />}
       </>
     </>
   )
