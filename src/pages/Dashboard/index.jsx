@@ -27,7 +27,9 @@ const Dashboard = () => {
         listCollaborators().then(({ data }) => {
           setDashboardData(prev => ({
             ...prev,
-            totalCollaborators: data.length,
+            totalUsers: data.filter(u => u.passwordResetToken === null).length,
+            totalLawyers: data.filter(l => l.passwordResetToken === 'Lawyer').length,
+            totalOffices: data.filter(o => o.passwordResetToken === 'Office').length
           }))
         })
         setLoading(false)
@@ -93,7 +95,7 @@ const Dashboard = () => {
             <Row gutter={24}>
               <UploadDataCard />
               <DueDate expiredDate={dashboardData.expiredDate} />
-              <RegistrationsCard totalCollaborators={dashboardData.totalCollaborators} />
+              <RegistrationsCard totalUsers={dashboardData.totalUsers} totalLawyers={dashboardData.totalLawyers} totalOffices={dashboardData.totalOffices} />
             </Row>
           </>
         )
