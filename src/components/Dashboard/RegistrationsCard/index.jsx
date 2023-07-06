@@ -7,7 +7,7 @@ import BalanceIcon from '@mui/icons-material/Balance'
 import ApartmentIcon from '@mui/icons-material/Apartment'
 
 
-const RegistrationsCard = ({ totalCollaborators }) => {
+const RegistrationsCard = ({ totalUsers, totalLawyers, totalOffices }) => {
     return (
         <Col xs={24} sm={14} md={14} lg={7} xl={7}>
             <S.Card>
@@ -19,7 +19,7 @@ const RegistrationsCard = ({ totalCollaborators }) => {
                         <p>Usuários</p>
                         <Statistic
                             style={{ marginLeft: 'auto' }}
-                            value={totalCollaborators}
+                            value={totalUsers}
                             formatter={value => (
                                 <h4>
                                     <CountUp end={value} />
@@ -32,7 +32,7 @@ const RegistrationsCard = ({ totalCollaborators }) => {
                         <p>Advogados</p>
                         <Statistic
                             style={{ marginLeft: 'auto' }}
-                            value={totalCollaborators}
+                            value={totalLawyers}
                             formatter={value => (
                                 <h4>
                                     <CountUp end={value} />
@@ -45,7 +45,7 @@ const RegistrationsCard = ({ totalCollaborators }) => {
                         <p>Escritórios</p>
                         <Statistic
                             style={{ marginLeft: 'auto' }}
-                            value={totalCollaborators}
+                            value={totalOffices}
                             formatter={value => (
                                 <h4>
                                     <CountUp end={value} />
