@@ -9,10 +9,10 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import ApartmentIcon from '@mui/icons-material/Apartment'
 
 
-const ListOffices = ({ collaborators, successCallback }) => {
+const ListOffices = ({ offices, successCallback }) => {
     const userData = getUserCachedData()
     const isAdmin = userData.admin
-    const offices = [
+    /*const offices = [
         {
             "id": 1,
             "office_name": "Smith & Johnson Law Firm",
@@ -69,7 +69,7 @@ const ListOffices = ({ collaborators, successCallback }) => {
             "email": "contact@carterfosterlaw.com",
             "address": "222 Elmwood Avenue, Downtown"
         }
-    ]
+    ]*/
 
     return (
         <S.TableContent>
@@ -85,12 +85,12 @@ const ListOffices = ({ collaborators, successCallback }) => {
                 </thead>
                 <tbody>
                     {offices?.map(
-                        ({ id, office_name, telephone, email, address }) => {
+                        ({ id, first_name, telephone, email, last_name }) => {
                             return (
                                 <tr key={id}>
                                     <td
-                                        onClick={() => copy(`${office_name}`)}
-                                    >{`${office_name}`}</td>
+                                        onClick={() => copy(`${first_name}`)}
+                                    >{`${first_name}`}</td>
                                     <td onClick={() => copy(telephone)} style={{ minWidth: '180px' }}>
                                         <a
                                             href={`https://api.whatsapp.com/send/?phone=55${telephone}&text&app_absent=0`}
@@ -101,17 +101,17 @@ const ListOffices = ({ collaborators, successCallback }) => {
                                         </a>
                                     </td>
                                     <td onClick={() => copy(email)}>{email}</td>
-                                    <td onClick={() => copy(address)}>{address}</td>
+                                    <td onClick={() => copy(last_name)}>{last_name}</td>
                                     {isAdmin && (
                                         <td>
                                             <Actions
                                                 collaboratorData={{
                                                     id,
-                                                    office_name,
+                                                    first_name,
                                                     telephone,
                                                     email,
                                                     telephone,
-                                                    address,
+                                                    last_name,
                                                 }}
                                                 successCallback={successCallback}
                                             />
