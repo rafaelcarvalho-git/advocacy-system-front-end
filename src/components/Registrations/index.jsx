@@ -12,7 +12,7 @@ const Registrations = ({ collaborators, successCallback }) => {
     <>
       <RegistrationsMenu menuOption={menuOption} setMenuOption={setMenuOption} />
 
-      <RegistrationsOptions userType={menuOption} />
+      <RegistrationsOptions userType={menuOption} successCallback={successCallback} />
 
       <>
         {menuOption === 'users' && <ListUsers collaborators={collaborators} successCallback={successCallback} userType={menuOption} />}
