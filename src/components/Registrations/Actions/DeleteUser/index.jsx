@@ -15,7 +15,7 @@ const DeleteUser = ({
   const [incorrectPhrase, setIncorrectPhrase] = useState('')
 
   const handleOk = () => {
-    if (exclude !== '' && exclude === 'advocacysystemAdv') {
+    if (exclude !== '' && exclude === '123') {
       validateCollaborator()
         .then(response => {
           setDeleteUser(false)
