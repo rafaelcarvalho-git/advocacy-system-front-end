@@ -11,7 +11,7 @@ import { useState } from 'react'
 const pages = [{ item: 'Dashboard', icon: <DashboardIcon />, link: '/dashboard' }, { item: 'Processos', icon: <ArticleIcon />, link: '/processos' }, { item: 'Cadastros', icon: <PeopleAltIcon />, link: '/cadastros' }]
 
 const Navbar = ({ setLogout }) => {
-    const [openNavMenu, setOpenNavMenu] = useState(null)
+    const [openNavMenu, setOpenNavMenu] = useState(false)
 
     const handleOpenNavMenu = (event) => {
         setOpenNavMenu(event.currentTarget)
@@ -49,7 +49,7 @@ const Navbar = ({ setLogout }) => {
                                 vertical: 'top',
                                 horizontal: 'left',
                             }}
-                            open={openNavMenu}
+                            open={Boolean(openNavMenu)}
                             onClose={() => handleCloseNavMenu()}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
