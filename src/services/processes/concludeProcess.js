@@ -4,7 +4,7 @@ import { getAuthHeaders } from 'utils/requests'
 const concludeProcess = async (id, DtConcluded) => {
   const headers = { headers: getAuthHeaders() }
   return await processClient.patch(
-    `/save/${id}`,
+    `/editProcesses/${id}`,
     { Status: 'Concluido', DataConclusao: DtConcluded },
     headers
   )

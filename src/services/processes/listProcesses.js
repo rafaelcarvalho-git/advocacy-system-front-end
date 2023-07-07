@@ -1,7 +1,7 @@
 import processClient from '.'
 import { getAuthHeaders } from 'utils/requests'
 
-const findProcesses = async (
+const listProcesses = async (
   paginate,
   searchCod,
   responsible,
@@ -44,7 +44,7 @@ const findProcesses = async (
     config.params.Status = processStatus
   }
 
-  return await processClient.get('/find', config)
+  return await processClient.get('/listProcesses', config)
 }
 
-export default findProcesses
+export default listProcesses

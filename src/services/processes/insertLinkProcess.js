@@ -4,7 +4,7 @@ import { getAuthHeaders } from 'utils/requests'
 const insertLinkProcess = async (processId, processLink) => {
   const headers = { headers: getAuthHeaders() }
   return await processClient.patch(
-    `/save/${processId}`,
+    `/editProcesses/${processId}`,
     { Link: processLink },
     headers
   )

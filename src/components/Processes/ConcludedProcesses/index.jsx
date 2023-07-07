@@ -3,7 +3,7 @@ import Filters from 'components/Processes/Filters'
 import Processes from 'components/Processes'
 import Pagination from 'components/Processes/Pagination'
 import Loader from 'components/Loader'
-import findProcesses from 'services/processes/findProcesses'
+import listProcesses from 'services/processes/listProcesses'
 import { Empty, message } from 'antd'
 
 const ConcludedProcesses = () => {
@@ -20,7 +20,7 @@ const ConcludedProcesses = () => {
 
   const fetchProcesses = useCallback(() => {
     setLoading(true)
-    findProcesses(
+    listProcesses(
       paginate,
       searchCod,
       responsible,

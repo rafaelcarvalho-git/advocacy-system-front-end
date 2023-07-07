@@ -4,7 +4,7 @@ import Filters from 'components/Processes/Filters'
 import Pagination from 'components/Processes/Pagination'
 import Processes from 'components/Processes'
 import Loader from 'components/Loader'
-import findProcesses from 'services/processes/findProcesses'
+import listProcesses from 'services/processes/listProcesses'
 
 
 const ActiveProcesses = () => {
@@ -22,7 +22,7 @@ const ActiveProcesses = () => {
 
   const fetchProcesses = useCallback(() => {
     setLoading(true)
-    findProcesses(
+    listProcesses(
       paginate,
       searchCod,
       responsible,

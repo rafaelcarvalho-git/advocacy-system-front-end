@@ -1,7 +1,7 @@
 import * as S from './styles'
 import { useState } from 'react'
 import { Input, Checkbox, message } from 'antd'
-import editCollaborator from 'services/collaborator/saveCollaborator'
+import editCollaborator from 'services/collaborator/editCollaborator'
 import validateCollaborator from 'services/collaborator/validateCollaborator'
 
 const EditUser = ({
