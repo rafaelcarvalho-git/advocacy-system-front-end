@@ -1,5 +1,4 @@
 import * as S from './styles'
-import { Button } from 'antd'
 import SearchIcon from '@mui/icons-material/Search'
 import NewRegister from './NewRegister'
 import { useState, useEffect } from 'react'
@@ -7,7 +6,6 @@ import { isAdmin } from 'utils/permissions'
 
 
 const RegistrationsOptions = ({ setSearch, userType, successCallback }) => {
-    const [showRegister, setShowRegister] = useState(false)
     const [type, setType] = useState(userType)
 
     useEffect(() => {
@@ -31,10 +29,7 @@ const RegistrationsOptions = ({ setSearch, userType, successCallback }) => {
                     onChange={e => setSearch(e.target.value.toLowerCase())}
                 />
             </S.SearchBar>
-            {isAdmin && <>
-                <Button type='primary' onClick={() => setShowRegister(true)}>Novo {type}</Button>
-                <NewRegister open={showRegister} setIsOpen={setShowRegister} successCallback={successCallback} userType={userType} type={type} />
-            </>}
+            {isAdmin && <NewRegister type={type} successCallback={successCallback} userType={userType} />}
         </S.Options>
     )
 }
