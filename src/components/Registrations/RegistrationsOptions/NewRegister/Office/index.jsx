@@ -18,7 +18,7 @@ const NewRegisterOffice = ({ open, setIsOpen, successCallback }) => {
     const [incorrectInfo, setIncorrectInfo] = useState(false)
     const [incorrectPhrase, setIncorrectPhrase] = useState('')
 
-    function randomCpf(length) {
+    const randomCpf = (length) => {
         let result = '';
         const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
         const tamanhoCaracteres = caracteres.length;
