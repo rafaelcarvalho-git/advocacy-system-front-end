@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Select } from 'antd'
 
 export const State = styled.div`
+  margin: auto;
   max-width: 320px;
   min-width: 100px;
 

@@ -4,6 +4,7 @@ import { DatePicker } from 'antd'
 const { RangePicker } = DatePicker
 
 export const StartDate = styled.div`
+  margin: auto;
   @media (max-width: 531px) {
     min-width: 95%;
   }

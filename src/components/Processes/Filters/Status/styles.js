@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Select } from 'antd'
 
 export const Status = styled.div`
+  margin: auto;
   max-width: 400px;
   min-width: 140px;
 
