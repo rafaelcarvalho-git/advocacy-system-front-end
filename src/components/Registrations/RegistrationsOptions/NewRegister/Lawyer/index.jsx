@@ -5,19 +5,6 @@ import newCollaborator from 'services/collaborator/newCollaborator'
 import validateCollaborator from 'services/collaborator/validateCollaborator'
 
 const NewRegisterLawyer = ({ open, setIsOpen, successCallback }) => {
-    const [lawyerForm, setLawyerForm] = useState({
-        first_name: '',
-        last_name: '',
-        email: '',
-        telephone: '',
-        cpf: randomCpf(10),
-        password: 'aljhflakfhapfiahfçois',
-        passwordResetToken: 'Lawyer',
-        admin: false,
-    })
-    const [incorrectInfo, setIncorrectInfo] = useState(false)
-    const [incorrectPhrase, setIncorrectPhrase] = useState('')
-
     const randomCpf = (length) => {
         let result = '';
         const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
@@ -30,6 +17,18 @@ const NewRegisterLawyer = ({ open, setIsOpen, successCallback }) => {
 
         return result;
     }
+    const [lawyerForm, setLawyerForm] = useState({
+        first_name: '',
+        last_name: '',
+        email: '',
+        telephone: '',
+        cpf: randomCpf(10),
+        password: 'aljhflakfhapfiahfçois',
+        passwordResetToken: 'Lawyer',
+        admin: false,
+    })
+    const [incorrectInfo, setIncorrectInfo] = useState(false)
+    const [incorrectPhrase, setIncorrectPhrase] = useState('')
 
     const NewLawyer = () => {
         const isNotEmpty =
