@@ -67,6 +67,7 @@ const ActiveProcesses = () => {
         setProcessStatus={setProcessStatus}
         setStartDate={setStartDate}
         setResponsible={setResponsible}
+        successCallback={fetchProcesses}
       />
 
       {loading ? (
