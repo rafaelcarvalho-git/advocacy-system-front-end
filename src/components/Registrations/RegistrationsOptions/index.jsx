@@ -5,18 +5,21 @@ import { useState, useEffect } from 'react'
 import { isAdmin } from 'utils/permissions'
 
 
-const RegistrationsOptions = ({ setSearch, userType, successCallback }) => {
+const RegistrationsOptions = ({ collaborators, lawyers, offices, setSearch, setSearchValue, userType, successCallback }) => {
     const [type, setType] = useState(userType)
 
     useEffect(() => {
         if (userType === 'users') {
-            setType('Usuário');
+            setType('Usuário')
+            setSearchValue(collaborators)
         } else if (userType === 'lawyers') {
-            setType('Advogado');
+            setType('Advogado')
+            setSearchValue(lawyers)
         } else if (userType === 'offices') {
-            setType('Escritório');
+            setType('Escritório')
+            setSearchValue(offices)
         }
-    }, [userType]);
+    }, [userType])
 
     return (
         <S.Options>
