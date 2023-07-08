@@ -19,7 +19,7 @@ const NewProcess = ({ successCallback }) => {
     CodCausa: '',
     DtCadCausa: formatDate(),
     DtEncerramento: null,
-    DtInicioCausa: null,
+    DtInicioCausa: formatDate(),
     Esfera: '',
     Indenizavel: '',
     MotivodoStatus: '',
@@ -335,7 +335,7 @@ const NewProcess = ({ successCallback }) => {
                 />
               </S.NewProcessInput>
             </S.Flex>
-            <S.NewProcessInput>
+            <S.NewProcessInput style={{ marginTop: '1.1rem' }}>
               <label htmlFor='Link'>
                 <h4>Link</h4>
               </label>
