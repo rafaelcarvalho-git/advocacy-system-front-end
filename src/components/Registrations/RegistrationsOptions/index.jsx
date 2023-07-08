@@ -19,7 +19,8 @@ const RegistrationsOptions = ({ collaborators, lawyers, offices, setSearch, setS
             setType('Escritório')
             setSearchValue(offices)
         }
-    }, [userType])
+    }, [userType, collaborators, lawyers, offices, setSearchValue])
+
 
     return (
         <S.Options>
