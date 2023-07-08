@@ -18,6 +18,7 @@ const Container = () => {
             <Outlet />
             <S.Footer>
               &copy; {new Date().getFullYear()} - Advocacy System
+              <p>Developed by <a href='https://github.com/rafaelcarvalho-git' target='_blank' rel='noreferrer noopener'>Rafael Carvalho</a></p>
             </S.Footer>
           </S.Container>
         </>

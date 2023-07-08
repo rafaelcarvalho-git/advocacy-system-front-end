@@ -1,3 +1,4 @@
+import { primaryColor } from 'assets/global'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -34,5 +35,14 @@ export const Footer = styled.p`
 
   @media (max-width: 361px) {
     font-size: 14px;
+  }
+
+  & p {
+    margin-top: 12.5px;
+  }
+
+  & p a {
+    text-decoration: none;
+    color: ${primaryColor};
   }
 `
