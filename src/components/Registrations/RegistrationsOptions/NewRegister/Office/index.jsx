@@ -6,16 +6,16 @@ import validateCollaborator from 'services/collaborator/validateCollaborator'
 
 const NewRegisterOffice = ({ open, setIsOpen, successCallback }) => {
     const randomCpf = (length) => {
-        let result = '';
-        const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
-        const tamanhoCaracteres = caracteres.length;
+        let result = ''
+        const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$'
+        const tamanhoCaracteres = caracteres.length
 
         for (let i = 0; i < length; i++) {
-            const indiceAleatorio = Math.floor(Math.random() * tamanhoCaracteres);
-            result += caracteres.charAt(indiceAleatorio);
+            const indiceAleatorio = Math.floor(Math.random() * tamanhoCaracteres)
+            result += caracteres.charAt(indiceAleatorio)
         }
 
-        return result;
+        return result
     }
     const [officeForm, setOfficeForm] = useState({
         first_name: '',
@@ -84,36 +84,35 @@ const NewRegisterOffice = ({ open, setIsOpen, successCallback }) => {
         >
             <S.RegisterForm>
                 <S.RegisterInputGroup>
-                    <S.RegisterInput>
-                        <label htmlFor='office_name'>
-                            <h4>Nome Escritório</h4>
-                        </label>
-                        <Input
-                            type='text'
-                            size='large'
-                            onChange={e =>
-                                setOfficeForm(prev => ({ ...prev, first_name: e.target.value }))
-                            }
-                            onClick={() => setIncorrectInfo(false)}
-                            id='office_name'
-                        />
-                    </S.RegisterInput>
-                </S.RegisterInputGroup>
-
-                <S.RegisterInputGroup>
-                    <S.RegisterInput>
-                        <label htmlFor='office_telephone'>
-                            <h4>Telefone</h4>
-                        </label>
-                        <Input
-                            size='large'
-                            onChange={e =>
-                                setOfficeForm(prev => ({ ...prev, telephone: e.target.value }))
-                            }
-                            onClick={() => setIncorrectInfo(false)}
-                            id='office_telephone'
-                        />
-                    </S.RegisterInput>
+                    <S.Flex>
+                        <S.RegisterInput>
+                            <label htmlFor='office_name'>
+                                <h4>Nome Escritório</h4>
+                            </label>
+                            <Input
+                                type='text'
+                                size='large'
+                                onChange={e =>
+                                    setOfficeForm(prev => ({ ...prev, first_name: e.target.value }))
+                                }
+                                onClick={() => setIncorrectInfo(false)}
+                                id='office_name'
+                            />
+                        </S.RegisterInput>
+                        <S.RegisterInput>
+                            <label htmlFor='office_telephone'>
+                                <h4>Telefone</h4>
+                            </label>
+                            <Input
+                                size='large'
+                                onChange={e =>
+                                    setOfficeForm(prev => ({ ...prev, telephone: e.target.value }))
+                                }
+                                onClick={() => setIncorrectInfo(false)}
+                                id='office_telephone'
+                            />
+                        </S.RegisterInput>
+                    </S.Flex>
                 </S.RegisterInputGroup>
 
                 <S.RegisterInputGroup>

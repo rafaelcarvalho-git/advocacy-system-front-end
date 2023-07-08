@@ -6,16 +6,16 @@ import validateCollaborator from 'services/collaborator/validateCollaborator'
 
 const NewRegisterLawyer = ({ open, setIsOpen, successCallback }) => {
     const randomCpf = (length) => {
-        let result = '';
-        const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
-        const tamanhoCaracteres = caracteres.length;
+        let result = ''
+        const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$'
+        const tamanhoCaracteres = caracteres.length
 
         for (let i = 0; i < length; i++) {
-            const indiceAleatorio = Math.floor(Math.random() * tamanhoCaracteres);
-            result += caracteres.charAt(indiceAleatorio);
+            const indiceAleatorio = Math.floor(Math.random() * tamanhoCaracteres)
+            result += caracteres.charAt(indiceAleatorio)
         }
 
-        return result;
+        return result
     }
     const [lawyerForm, setLawyerForm] = useState({
         first_name: '',
