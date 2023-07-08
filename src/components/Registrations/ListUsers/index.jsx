@@ -8,12 +8,9 @@ import EmailIcon from '@mui/icons-material/Email'
 import LockPersonIcon from '@mui/icons-material/LockPerson'
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd'
 import BuildIcon from '@mui/icons-material/Build'
-import RegistrationsOptions from '../RegistrationsOptions'
-import { useState } from 'react'
 
 
-const ListUsers = ({ collaborators, successCallback, userType }) => {
-    const [search, setSearch] = useState('')
+const ListUsers = ({ collaborators, successCallback }) => {
     const userData = getUserCachedData()
     const isAdmin = userData.admin
 
