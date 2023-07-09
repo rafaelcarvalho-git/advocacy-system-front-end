@@ -100,7 +100,7 @@ const ListOffices = ({ offices, successCallback }) => {
                                             {telephone}
                                         </a>
                                     </td>
-                                    <td onClick={() => copy(email)}>{email}</td>
+                                    <td onClick={() => copy(email.toLowerCase())}>{email.toLowerCase()}</td>
                                     <td onClick={() => copy(last_name)}>{last_name}</td>
                                     {isAdmin && (
                                         <td>

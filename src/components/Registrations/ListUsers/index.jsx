@@ -35,7 +35,7 @@ const ListUsers = ({ collaborators, successCallback }) => {
                                     <td
                                         onClick={() => copy(`${first_name} ${last_name}`)}
                                     >{`${first_name} ${last_name}`}</td>
-                                    <td onClick={() => copy(email)}>{email}</td>
+                                    <td onClick={() => copy(email.toLowerCase())}>{email.toLowerCase()}</td>
                                     <td onClick={() => copy(telephone)}>
                                         <a
                                             href={`https://api.whatsapp.com/send/?phone=55${telephone}&text&app_absent=0`}
