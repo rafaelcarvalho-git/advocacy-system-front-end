@@ -53,6 +53,8 @@ const ActiveProcesses = () => {
     expireDate,
   ])
 
+  console.log(activeProcesses)
+
   useEffect(() => {
     fetchProcesses()
   }, [fetchProcesses])

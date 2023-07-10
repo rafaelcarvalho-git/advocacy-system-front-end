@@ -30,7 +30,7 @@ const ConcludedProcesses = () => {
     )
       .then(({ data }) => {
         setConcludedProcesses(data?.process)
-        setEmpty(data?.process.length === 0)
+        setEmpty(data?.process?.length === 0)
         setTotalConcludedProcesses(data.concluded)
         setLoading(false)
       })
