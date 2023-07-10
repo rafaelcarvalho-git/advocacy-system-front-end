@@ -12,7 +12,7 @@ const AtributeProcess = ({ processId, successCallback }) => {
 
   const fetchCollaborators = useCallback(() => {
     listCollaborators().then(({ data }) => {
-      setCollaborators(data.filter(u => u.email !== 'admin@gmail.com'))
+      setCollaborators(data.filter(u => u.passwordResetToken !== 'Lawyer' && u.passwordResetToken !== 'Office'))
     })
   }, [])
 

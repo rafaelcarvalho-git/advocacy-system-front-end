@@ -7,7 +7,7 @@ const Collaborator = ({ setResponsible }) => {
 
   const fetchCollaborators = useCallback(() => {
     listCollaborators().then(({ data }) => {
-      setCollaborators(data.filter(u => u.email !== 'admin@gmail.com'))
+      setCollaborators(data.filter(u => u.passwordResetToken !== 'Lawyer' && u.passwordResetToken !== 'Office'))
     })
   }, [])
 
@@ -34,7 +34,7 @@ const Collaborator = ({ setResponsible }) => {
               value: col.id,
               label: `${col.first_name} ${col.last_name}`,
             }))
-            : []), // Adicione a verificação para garantir que collaborators seja um array antes de mapeá-lo
+            : []),
         ]}
       />
     </S.Collaborator>
