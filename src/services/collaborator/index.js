@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const collaboratorClient = axios.create({
-  baseURL: 'http://localhost:3333/collaborator',
+  baseURL: 'https://advocacy-system-back.vercel.app/collaborator',
 })
 
 export default collaboratorClient

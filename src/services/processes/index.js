@@ -1,8 +1,7 @@
 import axios from 'axios'
 
 const processClient = axios.create({
-  baseURL: 'http://localhost:3333/process',
+  baseURL: 'https://advocacy-system-back.vercel.app/process',
 })
 
 export default processClient
-
