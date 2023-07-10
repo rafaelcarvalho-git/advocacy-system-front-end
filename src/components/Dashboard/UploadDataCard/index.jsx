@@ -17,7 +17,7 @@ const UploadDataCard = () => {
                     <CardTitle>Atualizar Processos</CardTitle>
                     <CardText>Suba a planilha com os processos atualizados</CardText>
                     <UploadData open={showUpload} setIsOpen={setShowUpload} />
-                    <Button type='primary' onClick={() => setShowUpload(true)} style={{ marginTop: '8px' }}>Upload</Button>
+                    <Button type='primary' onClick={() => setShowUpload(true)} style={{ marginTop: '8px' }} disabled={true}>Upload</Button>
                 </CardContent>
                 <CardIcon><UploadFileIcon /></CardIcon>
             </S.Card>
