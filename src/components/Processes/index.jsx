@@ -8,11 +8,11 @@ const ListProcesses = ({ processes = [], isConcluded, isActive, successCallback 
   const changeColor = diasVencimento => {
     var colorBadge = ''
     if (diasVencimento <= 2) {
-      colorBadge = '#52c41a'
+      colorBadge = '#f5222d'
     } else if (diasVencimento === 3) {
       colorBadge = '#faad14'
     } else {
-      colorBadge = '#f5222d'
+      colorBadge = '#52c41a'
     }
 
     return colorBadge
