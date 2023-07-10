@@ -6,6 +6,7 @@ import Collaborator from './Collaborator'
 import State from './State'
 import Status from './Status'
 import NewProcess from '../NewProcess'
+import OrderBy from './OrderBy'
 
 
 const Filters = ({ isActive, setSearchCod, setExpireDate, setState, setProcessStatus, setStartDate, setResponsible, successCallback }) => {
@@ -16,6 +17,7 @@ const Filters = ({ isActive, setSearchCod, setExpireDate, setState, setProcessSt
         {isActive && <NewProcess successCallback={successCallback} />}
       </S.Options>
       <S.Filtering>
+        {/*<OrderBy isActive={isActive} />*/}
         {isActive && <ExpireDate setExpireDate={setExpireDate} />}
         <State setState={setState} />
         {isActive && <Status setProcessStatus={setProcessStatus} />}
