@@ -25,7 +25,7 @@ trabalho manual dos funcionários.
 
 Esse projeto é de uso pessoal do seu autor, com o intuito de servir como
 experiência e aprendizado. O sistema está utilizando um back-end com dados
-mockados, onde os dados são fictícios e utilziados apenas para demonstração.
+mockados, onde os dados são fictícios e utilizados apenas para demonstração.
 
 ---
 
