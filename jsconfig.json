@@ -3,6 +3,6 @@
         "baseUrl": "src"
     },
     "include": [
-        "srcc"
+        "src"
     ]
 }
